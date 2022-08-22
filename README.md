@@ -1,2 +1,1 @@
-# sakana
-sakana！小鱼虚拟器 sakana simulator
+# 🐟「Sakana Simulator」小鱼模拟器
