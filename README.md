@@ -1,6 +1,5 @@
 
-<img src="sakana.png" height="200px">
-<img src="chisato.png" height="200px">
+<img src="sakana.png" height="200px"><img src="chisato.png" height="200px">
 
 # 🐟「Sakana! Simulator」石蒜模拟器
 
