@@ -106,7 +106,7 @@ const move = (x,y)=>{
     y = Math.min(140,y);
 
     console.log({x,y})
-    v.r = x * 0.08;
+    v.r = x * 0.1;
     v.y = y;
     v.w = 0;
     v.t = 0;
