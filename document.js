@@ -1,6 +1,5 @@
 const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
-
 const inertia = 0.1;
 const decay = 0.99;
 const v = {
@@ -13,12 +12,62 @@ const v = {
 
 let runing = true;
 
+
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+
+const width = 800;
+const height = 800;
+canvas.width = width;
+canvas.height = height;
+
+
 const draw = _=>{
 
     let { r,y,t,w,d } = v;
     const x = r * 1;
     const _y = y;// - Math.abs(x);
     el.style.transform = `rotate(${r}deg) translateX(${x}px) translateY(${_y}px)`;
+
+    ctx.clearRect(0,0,width,height);
+    ctx.save();
+    ctx.translate(
+        width/2 ,
+        140 + 400 - 40
+    );
+    ctx.rotate(r/57);
+    ctx.translate(
+        x,
+        _y
+    );
+
+    ctx.drawImage(
+        sakanaImageEl,
+        0,0,
+        sakanaImageEl.naturalWidth,
+        sakanaImageEl.naturalHeight,
+
+        -sakanaImageEl.naturalWidth/2/2,
+        -400 ,
+
+        sakanaImageEl.naturalWidth/2,
+        sakanaImageEl.naturalHeight/2
+    );
+
+    ctx.restore();
+
+};
+const loadImage = (src,onOver)=>{
+    const el = new Image();
+    el.onload = _=> onOver(el);
+    el.src = src;
+};
+let sakanaImageEl;
+const init = onOver=>{
+    loadImage('sakana.png',el=>{
+        sakanaImageEl = el;
+        onOver();
+    })
 }
 
 const run = _=>{
@@ -44,8 +93,10 @@ const run = _=>{
     draw();
 };
 
-requestAnimationFrame(run);
 
+init(_=>{
+    requestAnimationFrame(run);
+});
 
 el.onmousedown = e=>{
     runing = false;
