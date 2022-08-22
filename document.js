@@ -16,11 +16,12 @@ let runing = true;
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
-const width = 800;
+console.log(window.innerWidth);
+
+const width = Math.min(document.documentElement.offsetWidth,800);
 const height = 800;
 canvas.width = width;
 canvas.height = height;
-
 
 const draw = _=>{
 
@@ -97,16 +98,26 @@ const run = _=>{
 init(_=>{
     requestAnimationFrame(run);
 });
+const move = (x,y)=>{
+    y = y * 0.2;
+    y = Math.min(140,y);
 
-el.onmousedown = e=>{
+    console.log({x,y})
+    v.r = x * 0.08;
+    v.y = y;
+    v.w = 0;
+    v.t = 0;
+    draw();
+}
+document.onmousedown = e=>{
+    e.preventDefault();
     runing = false;
-    console.log(e);
-    const { offsetX, offsetY } = e;
     const { pageX, pageY } = e;
-    // console.log({ pageX, pageY });
     const _downPageX = pageX;
     const _downPageY = pageY;
+
     document.onmouseup = e=>{
+        e.preventDefault();
         document.onmousemove = null;
         document.onmouseup = null;
 
@@ -123,19 +134,55 @@ el.onmousedown = e=>{
 
         const { pageX, pageY } = e;
 
-        console.log({ pageX, pageY })
+        let x = pageX - leftCenter;
+        let y = pageY - _downPageY;
+        move(x,y);
+    };
+};
+
+document.ontouchstart = e=>{
+    e.preventDefault();
+    runing = false;
+    if(!e.touches[0]) return;
+
+    const { pageX, pageY } = e.touches[0];
+    const _downPageX = pageX;
+    const _downPageY = pageY;
+
+    document.ontouchend = e=>{
+        document.ontouchmove = null;
+        document.ontouchend = null;
+
+        runing = true;
+        run();
+    };
+    document.ontouchmove = e=>{
+        if(!e.touches[0]) return;
+
+        const rect = boxEl.getBoundingClientRect();
+        // console.log(rect);
+        const leftCenter = rect.left + rect.width / 2;
+        const topCenter = rect.top;
+
+        // console.log(e);
+
+        const { pageX, pageY } = e.touches[0];
 
         let x = pageX - leftCenter;
         let y = pageY - _downPageY;
-        
-        y = y * 0.2;
-        y = Math.min(140,y);
-
-        console.log({x,y})
-        v.r = x * 0.08;
-        v.y = y;
-        v.w = 0;
-        v.t = 0;
-        draw();
+        move(x,y);
     };
 };
+console.log(window.DeviceOrientationEvent)
+if(window.DeviceOrientationEvent){
+    let lastGamma = 0;
+    window.addEventListener('deviceorientation', function(e) {
+        const { beta, gamma } = e;
+
+        console.log(beta,gamma);
+        const g = gamma - lastGamma;
+        v.w += g;
+        lastGamma = gamma;
+        out.innerHTML = g;
+    });
+}
