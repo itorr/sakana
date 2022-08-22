@@ -1,6 +1,7 @@
 html{
     background:#3f80b6;
     overflow: hidden;
+    font: 16px sans-serif;
 }
 body{
     margin: 0;
@@ -46,17 +47,23 @@ canvas{
         transform-origin: 50% 400px;
         background: no-repeat 50% 50%;
         background-size:cover;
-        background-image: url(FYoMdPuagAAD-51.jpg);
         background-image: url(sakana.png);
         // background-image: url(FYlpb3dacAAhuxs.jpg);
+        &.chisato{
+            --main-width: 150px;
+            --main-height: 300px;
+            background-image: url(chisato.png);
+        }
     }
     .bed{
         width: 160px;
-        height: 30px;
+        height: 20px;
         position: absolute;
         left: 20px;
         bottom: 0;
         // box-shadow:0 0 0 2px green;
-        background: #FFF;
+        background: rgba(255,255,255,.5);
+        border-radius: 2px;
+        cursor: pointer;
     }
 }
