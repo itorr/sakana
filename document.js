@@ -13,15 +13,17 @@ const v = {
 let runing = true;
 
 
-const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
 
 console.log(window.innerWidth);
 
 const width = Math.min(document.documentElement.offsetWidth,800);
 const height = 800;
-canvas.width = width;
-canvas.height = height;
+
+
+// const canvas = document.querySelector('canvas');
+// const ctx = canvas.getContext('2d');
+// canvas.width = width;
+// canvas.height = height;
 
 const draw = _=>{
 
@@ -30,6 +32,7 @@ const draw = _=>{
     const _y = y;// - Math.abs(x);
     el.style.transform = `rotate(${r}deg) translateX(${x}px) translateY(${_y}px)`;
 
+    return;
     ctx.clearRect(0,0,width,height);
     ctx.save();
     ctx.translate(
@@ -109,7 +112,7 @@ const move = (x,y)=>{
     v.t = 0;
     draw();
 }
-document.onmousedown = e=>{
+el.onmousedown = e=>{
     e.preventDefault();
     runing = false;
     const { pageX, pageY } = e;
@@ -140,7 +143,7 @@ document.onmousedown = e=>{
     };
 };
 
-document.ontouchstart = e=>{
+el.ontouchstart = e=>{
     e.preventDefault();
     runing = false;
     if(!e.touches[0]) return;
