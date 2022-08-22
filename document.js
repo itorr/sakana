@@ -101,11 +101,18 @@ const run = _=>{
 init(_=>{
     requestAnimationFrame(run);
 });
+const maxX = 600;
+const maxY = 140;
 const move = (x,y)=>{
-    y = y * 0.2;
-    y = Math.min(140,y);
+    x = Math.max(-maxX,x);
+    x = Math.min(maxX,x);
 
-    console.log({x,y})
+    y = y * 0.2;
+
+    y = Math.max(-maxY,y);
+    y = Math.min(maxY,y);
+
+    // console.log({x,y})
     v.r = x * 0.1;
     v.y = y;
     v.w = 0;
@@ -176,16 +183,52 @@ el.ontouchstart = e=>{
         move(x,y);
     };
 };
-console.log(window.DeviceOrientationEvent)
-if(window.DeviceOrientationEvent){
-    let lastGamma = 0;
-    window.addEventListener('deviceorientation', function(e) {
-        const { beta, gamma } = e;
+const getOrientationPermission = onOver=>{
+    if (typeof DeviceOrientationEvent['requestPermission'] !== 'function') return onOver();
 
-        console.log(beta,gamma);
-        const g = gamma - lastGamma;
-        v.w += g;
-        lastGamma = gamma;
-        out.innerHTML = g;
+    DeviceOrientationEvent['requestPermission']().then(permissionState => {
+        // console.log({permissionState})
+        if(permissionState !== 'granted') return// alert('获取权限失败');
+        onOver();
     });
-}
+};
+const setOrientationListener = _=>{
+    getOrientationPermission(_=>{
+        if(window.DeviceOrientationEvent){
+            let lastPower;
+            let lastOriUnix = 0;
+            window.addEventListener('deviceorientation', (e)=> {
+                const { alpha, beta, gamma } = e;
+                const unix = +new Date();
+                // if((unix - lastOriUnix) < 50) return;
+
+                lastOriUnix = unix;
+                const power = Math.max(
+                    // alpha,
+                    beta,
+                    gamma
+                );
+
+                console.log(e,beta,gamma);
+                if(lastPower === undefined){
+                    lastPower = power;
+                }
+                const g = power - lastPower;
+                const gg = Math.abs(g * 0.5);
+                if(Math.abs(v.w) < gg){
+                    v.w = (v.w<0?-1:1) * (Math.abs(v.w) + gg);
+                }
+                lastPower = power;
+                // out.innerHTML = g;
+            });
+        };
+    });
+};
+
+document.addEventListener('touchstart',setOrientationListener,{once:true})
+
+
+document.querySelector('.bed').addEventListener('click',e=>{
+    e.preventDefault();
+    el.classList.toggle('chisato');
+})
