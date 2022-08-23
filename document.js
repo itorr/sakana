@@ -2,7 +2,7 @@ const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
 const inertia = 0.1;
 const decay = 0.99;
-const v = {
+let v = {
     r: 10, // 角度
     y: 0, // 高度
     t: 0, // 垂直速度
@@ -14,32 +14,85 @@ let runing = true;
 
 
 
-console.log(window.innerWidth);
-
 const width = Math.min(document.documentElement.offsetWidth,800);
 const height = 800;
 
 
-// const canvas = document.querySelector('canvas');
-// const ctx = canvas.getContext('2d');
-// canvas.width = width;
-// canvas.height = height;
+const canvas = document.querySelector('canvas');
+const ctx = canvas.getContext('2d');
+canvas.width = width;
+canvas.height = height;
+
+
+
+const rotate = (cx, cy, x, y, angle)=> {
+    const radians = (Math.PI / 180) * angle;
+    const cos = Math.cos(radians);
+    const sin = Math.sin(radians);
+    const nx = (cos * (x - cx)) + (sin * (y - cy)) + cx;
+    const ny = (cos * (y - cy)) - (sin * (x - cx)) + cy;
+    return {
+        x: nx, 
+        y: ny
+    };
+}
+
 
 const draw = _=>{
-
+    
     let { r,y,t,w,d } = v;
     const x = r * 1;
     const _y = y;// - Math.abs(x);
-    el.style.transform = `rotate(${r}deg) translateX(${x}px) translateY(${_y}px)`;
+    el.style.transform = `rotate(${r}deg) translateX(${x}px) translateY(${y}px)`;
+
+    ctx.clearRect(0,0,width,height);
+    ctx.save();
+
+    ctx.strokeStyle = '#182562';
+    ctx.lineWidth = 10;
+
+    ctx.beginPath();
+    ctx.translate(
+        width / 2 ,
+        640 // height - 160
+    );
+    ctx.moveTo(
+        0,
+        140
+    );
+
+    const cx = 0;
+    const cy = -100;
+
+    const n = rotate(
+        cx,
+        cy,
+        x,
+        -y,
+        r
+    );
+
+    const nx = n.x;
+    const ny = -n.y - 100;
+    
+    ctx.quadraticCurveTo(
+        0,
+        75,
+        nx,
+        ny
+    );
+
+    ctx.stroke();
+    ctx.restore();
 
     return;
-    ctx.clearRect(0,0,width,height);
+    // ctx.clearRect(0,0,width,height);
     ctx.save();
     ctx.translate(
         width/2 ,
-        140 + 400 - 40
+        height - 160
     );
-    ctx.rotate(r/57);
+    ctx.rotate(r/180*Math.PI);
     ctx.translate(
         x,
         _y
@@ -51,8 +104,8 @@ const draw = _=>{
         sakanaImageEl.naturalWidth,
         sakanaImageEl.naturalHeight,
 
-        -sakanaImageEl.naturalWidth/2/2,
-        -400 ,
+        -150,
+        -400,
 
         sakanaImageEl.naturalWidth/2,
         sakanaImageEl.naturalHeight/2
@@ -78,15 +131,11 @@ const run = _=>{
     if(!runing) return;
 
     requestAnimationFrame(run);
-    // setTimeout(run,200);
 
     let { r,y,t,w,d } = v;
 
-    // console.log(wElastic)
-
     w = w - r * 2;
     r = r + w * inertia;
-    // r = r % 360;
     v.w = w * d;
     v.r = r;
 
@@ -94,6 +143,7 @@ const run = _=>{
     y = y + t * inertia * 2;
     v.t = t * d;
     v.y = y;
+
     draw();
 };
 
@@ -101,19 +151,22 @@ const run = _=>{
 init(_=>{
     requestAnimationFrame(run);
 });
-const maxX = 600;
-const maxY = 140;
+const sticky = 0.1;
+const maxR = 60;
+const maxY = 110;
+const minY = -140;
 const move = (x,y)=>{
-    x = Math.max(-maxX,x);
-    x = Math.min(maxX,x);
+    let r = x * sticky;
 
-    y = y * 0.2;
+    r = Math.max(-maxR,r);
+    r = Math.min(maxR,r);
 
-    y = Math.max(-maxY,y);
+    y = y * sticky * 2;
+
+    y = Math.max(minY,y);
     y = Math.min(maxY,y);
 
-    // console.log({x,y})
-    v.r = x * 0.1;
+    v.r = r;
     v.y = y;
     v.w = 0;
     v.t = 0;
@@ -136,11 +189,9 @@ el.onmousedown = e=>{
     };
     document.onmousemove = e=>{
         const rect = boxEl.getBoundingClientRect();
-        // console.log(rect);
+
         const leftCenter = rect.left + rect.width / 2;
         const topCenter = rect.top;
-
-        // console.log(e);
 
         const { pageX, pageY } = e;
 
@@ -173,8 +224,6 @@ el.ontouchstart = e=>{
         // console.log(rect);
         const leftCenter = rect.left + rect.width / 2;
         const topCenter = rect.top;
-
-        // console.log(e);
 
         const { pageX, pageY } = e.touches[0];
 
