@@ -18,31 +18,43 @@ const minY = -maxY;
 const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
 const inertia = 0.1;
-const decay = 0.99;
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+    get: (searchParams, prop) => searchParams.get(prop),
+});
+
+if(params.alpha){
+    document.documentElement.setAttribute('data-alpha',params.alpha);
+}
+if(params.alpha){
+    document.documentElement.setAttribute('data-alpha',params.alpha);
+}
 
 
-
-
-const chisatoV = {
-    r: 0, // 角度
-    y: 40, // 高度
-    t: 0, // 垂直速度
-    w: 0, // 横向速度
-    d: decay // 衰减
-};
-const takinaV = {
-    r: 10, // 角度
-    y: 0, // 高度
-    t: 0, // 垂直速度
-    w: 0, // 横向速度
-    d: decay // 衰减
+const Values = {
+    chisato: {
+        r: 0, // 角度
+        y: 40, // 高度
+        t: 0, // 垂直速度
+        w: 0, // 横向速度
+        d: 0.99 // 衰减
+    },
+    takina: {
+        r: 10, // 角度
+        y: 0, // 高度
+        t: 0, // 垂直速度
+        w: 0, // 横向速度
+        d: 0.98 // 衰减
+    }
 };
 
 let runing = true;
 
 const deepCopy = v=> JSON.parse(JSON.stringify(v));
 
-let v = deepCopy(takinaV);
+
+el.classList.add(params.v);
+let v = deepCopy(Values[params.v] || Values['takina']);
 
 let width;
 let height;
@@ -334,9 +346,9 @@ document.querySelector('.bed').addEventListener('click',e=>{
     el.classList.toggle('chisato');
 
     if(el.classList.contains('chisato')){
-        v = deepCopy(chisatoV)
+        v = deepCopy(Values['chisato'])
     }else{
-        v = deepCopy(takinaV)
+        v = deepCopy(Values['takina'])
     }
 })
 

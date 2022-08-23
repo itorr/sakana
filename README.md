@@ -3,8 +3,15 @@
 
 # 🐟「Sakana! Simulator」石蒜模拟器
 
+虚拟立牌
+
 ## 地址 
 https://lab.magiconch.com/sakana/
+
+## 功能
+点击底座切换 Chisato Takina
+手机可以摇一摇甩动立牌
+添加 `?alpha=true` 请求参数可以获得透明背景（ 方便用于 wallpaper engine 之类 ）[例](https://lab.magiconch.com/sakana/?alpha=true)
 
 ## 写了弹簧
 https://weibo.com/1197780522/M2hvc8Nhq
