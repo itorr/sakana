@@ -15,9 +15,9 @@ https://lab.magiconch.com/sakana/
 https://twitter.com/blue00f4/status/1551887529615687680
 
 ## 功能
-点击底座切换 Chisato Takina
-
-手机可以摇一摇甩动立牌
+ - 按住立牌拖拽、松手后立牌会向反方向弹跳
+ - 点击底座切换角色
+ - 手机摇一摇可甩动立牌
 
 添加 `?v=chisato` 请求参数，可获得 [锦木千束](https://lab.magiconch.com/sakana/?v=chisato) 专属链接
 
