@@ -33,18 +33,18 @@ if(params.alpha){
 
 const Values = {
     chisato: {
-        r: 0, // 角度
+        r: 1, // 角度
         y: 40, // 高度
         t: 0, // 垂直速度
         w: 0, // 横向速度
         d: 0.99 // 衰减
     },
     takina: {
-        r: 10, // 角度
-        y: 0, // 高度
+        r: 12, // 角度
+        y: 2, // 高度
         t: 0, // 垂直速度
         w: 0, // 横向速度
-        d: 0.98 // 衰减
+        d: 0.988 // 衰减
     }
 };
 
@@ -346,9 +346,11 @@ document.querySelector('.bed').addEventListener('click',e=>{
     el.classList.toggle('chisato');
 
     if(el.classList.contains('chisato')){
-        v = deepCopy(Values['chisato'])
+        v = deepCopy(Values['chisato']);
+        history.replaceState({},'','?v=chisato');
     }else{
-        v = deepCopy(Values['takina'])
+        v = deepCopy(Values['takina']);
+        history.replaceState({},'','?v=takina');
     }
 })
 
