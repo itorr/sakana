@@ -1,3 +1,16 @@
+let device = String(navigator.userAgent.match(/steam|macos/i)).toLowerCase();
+
+if(
+    /iPhone|iPad|iPod/i.test(navigator.userAgent) 
+    || 
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+) device = 'ios';
+
+document.documentElement.setAttribute('data-device',device)
+
+
+
+
 const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
 const inertia = 0.1;
@@ -14,16 +27,22 @@ let runing = true;
 
 
 
-const width = Math.min(document.documentElement.offsetWidth,800);
-const height = 800;
+let width;
+let height;
 
 
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
-canvas.width = width;
-canvas.height = height;
 
+const resize = _=>{
+    width = Math.min(document.documentElement.offsetWidth,800);
+    height = 800;
 
+    canvas.width = width;
+    canvas.height = height;
+};
+
+resize();
 
 const rotate = (cx, cy, x, y, angle)=> {
     const radians = (Math.PI / 180) * angle;
@@ -126,7 +145,7 @@ const init = onOver=>{
         onOver();
     })
 }
-
+let or = 0;
 const run = _=>{
     if(!runing) return;
 
@@ -134,7 +153,7 @@ const run = _=>{
 
     let { r,y,t,w,d } = v;
 
-    w = w - r * 2;
+    w = w - r * 2 - or;
     r = r + w * inertia;
     v.w = w * d;
     v.r = r;
@@ -232,12 +251,18 @@ el.ontouchstart = e=>{
         move(x,y);
     };
 };
-const getOrientationPermission = onOver=>{
-    if (typeof DeviceOrientationEvent['requestPermission'] !== 'function') return onOver();
+const canOrientation = !!(window.DeviceOrientationEvent && typeof window.DeviceOrientationEvent['requestPermission'] === 'function');
 
-    DeviceOrientationEvent['requestPermission']().then(permissionState => {
+document.documentElement.setAttribute('data-can-orientation',canOrientation);
+
+const getOrientationPermission = onOver=>{
+    if (!canOrientation) return onOver();
+
+    window.DeviceOrientationEvent['requestPermission']().then(permissionState => {
         // console.log({permissionState})
-        if(permissionState !== 'granted') return// alert('获取权限失败');
+        if(permissionState !== 'granted') alert('获取权限失败');
+
+        document.documentElement.setAttribute('data-permission-state',true);
         onOver();
     });
 };
@@ -247,9 +272,19 @@ const setOrientationListener = _=>{
             let lastPower;
             let lastOriUnix = 0;
             window.addEventListener('deviceorientation', (e)=> {
-                const { alpha, beta, gamma } = e;
+                const { alpha, beta, gamma, acceleration } = e;
                 const unix = +new Date();
                 // if((unix - lastOriUnix) < 50) return;
+
+                console.log( { alpha, beta, gamma });
+
+                or = -gamma / 2;
+                or = or * (alpha > 180?-1:1);
+                or = Math.min(maxR,or);
+                or = Math.max(-maxR,or);
+                // console.log({or})
+                // out.innerHTML = JSON.stringify({ alpha, beta, gamma },0,2);
+                return;
 
                 lastOriUnix = unix;
                 const power = Math.max(
@@ -258,7 +293,7 @@ const setOrientationListener = _=>{
                     gamma
                 );
 
-                console.log(e,beta,gamma);
+                // console.log(e,beta,gamma);
                 if(lastPower === undefined){
                     lastPower = power;
                 }
@@ -268,16 +303,19 @@ const setOrientationListener = _=>{
                     v.w = (v.w<0?-1:1) * (Math.abs(v.w) + gg);
                 }
                 lastPower = power;
-                // out.innerHTML = g;
+
             });
         };
     });
 };
 
-document.addEventListener('touchstart',setOrientationListener,{once:true})
+setOrientationListener();
 
 
 document.querySelector('.bed').addEventListener('click',e=>{
     e.preventDefault();
     el.classList.toggle('chisato');
 })
+
+
+window.addEventListener('resize',resize);
