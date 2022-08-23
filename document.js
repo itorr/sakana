@@ -289,7 +289,7 @@ const getOrientationPermission = onOver=>{
 
     window.DeviceOrientationEvent['requestPermission']().then(permissionState => {
         // console.log({permissionState})
-        if(permissionState !== 'granted') alert('获取权限失败');
+        if(permissionState !== 'granted') return //alert('获取权限失败');
 
         document.documentElement.setAttribute('data-permission-state',true);
         onOver();
