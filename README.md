@@ -3,23 +3,22 @@
 
 # 🐟「Sakana! Simulator」石蒜模拟器
 
-虚拟立牌
-
-## 地址 
 https://lab.magiconch.com/sakana/
+
+
+## 插画来源
+大伏アオ
+[@blue00f4](https://twitter.com/blue00f4)
+[Pixiv](pixiv.me/aoiroblue1340)
+https://twitter.com/blue00f4/status/1551887529615687680
 
 ## 功能
 点击底座切换 Chisato Takina
+
 手机可以摇一摇甩动立牌
-添加 `?alpha=true` 请求参数可以获得透明背景（ 方便用于 wallpaper engine 之类 ）[例](https://lab.magiconch.com/sakana/?alpha=true)
 
-## 写了弹簧
-https://weibo.com/1197780522/M2hvc8Nhq
+添加 `?v=chisato` 请求参数，可获得 [锦木千束](https://lab.magiconch.com/sakana/?v=chisato) 专属链接
 
-## 图片来源
-https://twitter.com/blue00f4/status/1551887529615687680
+添加 `?v=takina` 请求参数，可获得 [井上泷奈](https://lab.magiconch.com/sakana/?v=takina) 专属链接
 
-## 参考
-https://segmentfault.com/a/1190000014119613
-https://cloud.tencent.com/developer/article/1803630?from=15425
-https://www.cnblogs.com/zhoug2020/p/7864898.html
+添加 `?alpha=true` 请求参数可以获得透明背景 [例](https://lab.magiconch.com/sakana/?alpha=true)
