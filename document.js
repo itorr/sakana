@@ -308,7 +308,7 @@ const setOrientationListener = _=>{
                 // console.log( { alpha, beta, gamma });
 
                 or = -gamma / 2;
-                or = or * (alpha > 180?-1:1);
+                // or = or * (alpha > 180?-1:1);
                 or = Math.min(maxR,or);
                 or = Math.max(-maxR,or);
                 // console.log({or})
