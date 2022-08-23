@@ -10,12 +10,27 @@ document.documentElement.setAttribute('data-device',device)
 
 
 
+const sticky = 0.1;
+const maxR = 60;
+const maxY = 110;
+const minY = -maxY;
 
 const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
 const inertia = 0.1;
 const decay = 0.99;
-let v = {
+
+
+
+
+const chisatoV = {
+    r: 0, // 角度
+    y: 40, // 高度
+    t: 0, // 垂直速度
+    w: 0, // 横向速度
+    d: decay // 衰减
+};
+const takinaV = {
     r: 10, // 角度
     y: 0, // 高度
     t: 0, // 垂直速度
@@ -25,7 +40,9 @@ let v = {
 
 let runing = true;
 
+const deepCopy = v=> JSON.parse(JSON.stringify(v));
 
+let v = deepCopy(takinaV);
 
 let width;
 let height;
@@ -154,7 +171,7 @@ const run = _=>{
     let { r,y,t,w,d } = v;
 
     w = w - r * 2 - or;
-    r = r + w * inertia;
+    r = r + w * inertia * 1.2;
     v.w = w * d;
     v.r = r;
 
@@ -170,10 +187,6 @@ const run = _=>{
 init(_=>{
     requestAnimationFrame(run);
 });
-const sticky = 0.1;
-const maxR = 60;
-const maxY = 110;
-const minY = -140;
 const move = (x,y)=>{
     let r = x * sticky;
 
@@ -251,7 +264,11 @@ el.ontouchstart = e=>{
         move(x,y);
     };
 };
-const canOrientation = !!(window.DeviceOrientationEvent && typeof window.DeviceOrientationEvent['requestPermission'] === 'function');
+const canOrientation = !!(
+    window.DeviceOrientationEvent 
+    && 
+    typeof window.DeviceOrientationEvent['requestPermission'] === 'function'
+);
 
 document.documentElement.setAttribute('data-can-orientation',canOrientation);
 
@@ -276,7 +293,7 @@ const setOrientationListener = _=>{
                 const unix = +new Date();
                 // if((unix - lastOriUnix) < 50) return;
 
-                console.log( { alpha, beta, gamma });
+                // console.log( { alpha, beta, gamma });
 
                 or = -gamma / 2;
                 or = or * (alpha > 180?-1:1);
@@ -315,6 +332,12 @@ setOrientationListener();
 document.querySelector('.bed').addEventListener('click',e=>{
     e.preventDefault();
     el.classList.toggle('chisato');
+
+    if(el.classList.contains('chisato')){
+        v = deepCopy(chisatoV)
+    }else{
+        v = deepCopy(takinaV)
+    }
 })
 
 
