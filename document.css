@@ -1,0 +1,127 @@
+:root {
+    --app-height: 100vh;
+  }
+  html {
+    background: #3f80b6;
+    color: #FFF;
+    overflow: hidden;
+    font: 16px sans-serif;
+  }
+  html[data-device="iphone"],
+  html[data-device="ipad"],
+  html[data-device="ipod"],
+  html[data-device="ios"] {
+    --app-height: -webkit-fill-available;
+  }
+  html[data-alpha="true"] {
+    background: none;
+  }
+  html[data-alpha="true"] footer {
+    display: none;
+  }
+  body {
+    margin: 0;
+    overflow: hidden;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    height: var(--app-height);
+  }
+  a {
+    color: #FFF;
+    text-decoration: none;
+  }
+  .app {
+    display: block;
+    height: 100%;
+  }
+  canvas {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0 auto;
+  }
+  .single-box {
+    margin: 140px auto 0;
+    width: 200px;
+    height: 500px;
+    position: relative;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .single-box .main {
+    --main-width: 300px;
+    --main-height: 300px;
+    width: var(--main-width);
+    height: var(--main-height);
+    position: absolute;
+    left: calc(100px - var(--main-width) / 2);
+    bottom: 260px;
+    cursor: pointer;
+    transform-origin: 50% 400px;
+    background: no-repeat 50% 50%;
+    background-size: cover;
+    background-image: url(sakana.png);
+  }
+  .single-box .main.chisato {
+    background-image: url(chisato.png);
+  }
+  .single-box .bed {
+    width: 160px;
+    height: 20px;
+    position: absolute;
+    left: 20px;
+    bottom: 0;
+    background: rgba(255,255,255,0.5) no-repeat 50% 50%;
+    border-radius: 2px;
+    cursor: pointer;
+    background-image: url(blue00f4.png);
+    background-size: 20px 20px;
+  }
+  footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 8px;
+    text-align: right;
+  }
+  footer a {
+    display: block;
+    color: #a4c5e1;
+  }
+  footer a span {
+    opacity: 0.5;
+  }
+  button {
+    border: 0;
+    background: #000;
+    color: #FFF;
+    font: inherit;
+    line-height: 1.4;
+    padding: 15px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .set-orientation-box {
+    display: none;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(23,37,98,0.9);
+    padding: 20px;
+    text-align: center;
+  }
+  html[data-can-orientation="true"] .set-orientation-box {
+    display: block;
+  }
+  html[data-permission-state="true"] .set-orientation-box {
+    display: none;
+  }
+  
