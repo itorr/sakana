@@ -1,7 +1,7 @@
 <a href="https://lab.magiconch.com/sakana/?v=takina" target="_blank">
-  <img src="sakana.png" height="180px">
+  <img src="html/sakana.png" height="180px">
 </a><a href="https://lab.magiconch.com/sakana/?v=chisato" target="_blank">
-  <img src="chisato.png" height="180px">
+  <img src="html/chisato.png" height="180px">
 </a>
 
 # 🐟「Sakana! Simulator」石蒜模拟器
