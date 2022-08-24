@@ -120,17 +120,21 @@ canvas{
     font-size: 12px;
     line-height: 20px;
     padding: 4px 4px;
+    overflow: hidden;
+    width: 50px;
     a{
+        float: left;
         padding:0 4px;
+        margin-top:2px;
         border-radius:2px;
+        &[data-active="true"]{
+            background: #182562;
+        }
     }
 }
 .trigger-magic-link{
     &:before{
-        content: 'Auto';
-    }
-    &[data-active="true"]{
-        background: #182562;
+        content: '自动';
     }
 }
 
@@ -167,9 +171,9 @@ button{
 
     &.voice-mute {
         text-decoration: line-through;
-        &::before, &::after {
-            content: '\00a0';
-        }
+        // &::before, &::after {
+        //     content: '\00a0';
+        // }
     }
 }
 

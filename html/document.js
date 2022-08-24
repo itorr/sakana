@@ -54,15 +54,18 @@ const Voices = {
     chisato: new Audio('chinanago.mp3'),
     takina: new Audio('sakana.mp3'),
 
-    isMute: voiceButton.classList.contains('voice-mute')
+    isMute: false
 };
 
 Voices.takina.volume = Voices.chisato.volume = 0.8;
 Voices.takina.muted = Voices.chisato.muted = true;
 
 const toggleVoiceMute = () => {
-    voiceButton.classList.toggle('voice-mute');
-    Voices.isMute = voiceButton.classList.contains('voice-mute');
+    Voices.isMute = voiceButton.getAttribute('data-active') !== 'true';
+    voiceButton.setAttribute(
+        'data-active',
+        Voices.isMute
+    );
     Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
 };
 
@@ -316,7 +319,7 @@ el.ontouchstart = e=>{
 
 const playVoice = () => {
     if (Voices.isMute) return;
-    console.log({ r: v.r, y: v.y })
+    // console.log({ r: v.r, y: v.y })
 
     if (el.classList.contains('chisato')) {
         if (
