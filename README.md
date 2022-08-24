@@ -10,6 +10,7 @@ https://lab.magiconch.com/sakana/
 大伏アオ
 [@blue00f4](https://twitter.com/blue00f4)
 [Pixiv](pixiv.me/aoiroblue1340)
+（已从老师推特取得在网页中使用两张插画的非商用授权）
 
 https://twitter.com/blue00f4/status/1551887529615687680
 
