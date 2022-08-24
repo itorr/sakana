@@ -47,6 +47,29 @@ const Values = {
     }
 };
 
+
+const voiceButton = document.querySelector('.set-voice');
+
+const Voices = {
+    chisato: new Audio('chinanago.mp3'),
+    takina: new Audio('sakana.mp3'),
+
+    isMute: false
+};
+
+Voices.takina.volume = Voices.chisato.volume = 0.8;
+Voices.takina.muted = Voices.chisato.muted = true;
+
+const toggleVoiceMute = () => {
+    Voices.isMute = voiceButton.getAttribute('data-active') !== 'true';
+    voiceButton.setAttribute(
+        'data-active',
+        Voices.isMute
+    );
+    Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
+};
+
+
 let runing = true;
 
 const deepCopy = v=> JSON.parse(JSON.stringify(v));
@@ -230,12 +253,16 @@ el.onmousedown = e=>{
     const _downPageX = pageX;
     const _downPageY = pageY;
 
+    // 确保通过用户触发事件获得 audio 播放授权
+    Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
+
     document.onmouseup = e=>{
         e.preventDefault();
         document.onmousemove = null;
         document.onmouseup = null;
 
         runing = true;
+        playVoice();
         run();
     };
     document.onmousemove = e=>{
@@ -261,11 +288,15 @@ el.ontouchstart = e=>{
     const _downPageX = pageX;
     const _downPageY = pageY;
 
+    // 确保通过用户触发事件获得 audio 播放授权
+    Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
+
     document.ontouchend = e=>{
         document.ontouchmove = null;
         document.ontouchend = null;
 
         runing = true;
+        playVoice();
         run();
     };
     document.ontouchmove = e=>{
@@ -283,6 +314,34 @@ el.ontouchstart = e=>{
         move(x,y);
     };
 };
+
+
+
+const playVoice = () => {
+    if (Voices.isMute) return;
+    // console.log({ r: v.r, y: v.y })
+
+    if (el.classList.contains('chisato')) {
+        if (
+            // 'nice chin~a~na~go~' 经验值
+            Math.abs(v.r) <= 4
+            && Math.abs(v.y) >= 20
+        ) {
+            console.log('nice chin~a~na~go~');
+            Voices.chisato.play();
+        };
+    } else {
+        if (
+            // 'nice sakana~' 经验值
+            v.r >= Values.takina.r
+            && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
+        ) {
+            console.log('nice sakana~');
+            Voices.takina.play();
+        };
+    };
+};
+
 const canOrientation = !!(
     window.DeviceOrientationEvent 
     && 

@@ -1,3 +1,7 @@
 参考/*
 what2.md
 录制动画.psd
+
+# compile from less
+# > lessc html/document.less > html/document.css
+document.css
