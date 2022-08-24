@@ -29,6 +29,12 @@ if(params.alpha){
     htmlEl.setAttribute('data-alpha',params.alpha);
 }
 
+// 自定义背景色
+if(params.background){
+    htmlEl.setAttribute('data-alpha',params.alpha);
+    htmlEl.style.background = params.background;
+}
+
 
 const Values = {
     chisato: {
