@@ -166,10 +166,10 @@ const loadImage = (src,onOver)=>{
 };
 let sakanaImageEl;
 const init = onOver=>{
-    loadImage('sakana.png',el=>{
-        sakanaImageEl = el;
+    // loadImage('sakana.png',el=>{
+        // sakanaImageEl = el;
         onOver();
-    })
+    // })
 }
 let or = 0;
 const run = _=>{
