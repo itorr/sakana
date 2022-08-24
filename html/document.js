@@ -294,45 +294,22 @@ const getOrientationPermission = onOver=>{
         onOver();
     });
 };
+
+
+const onDeviceOrientation = (e)=> {
+    const { alpha, beta, gamma, acceleration } = e;
+
+    // console.log( { alpha, beta, gamma });
+
+    or = -gamma / 2;
+    // or = or * (alpha > 180?-1:1);
+    or = Math.min(maxR,or);
+    or = Math.max(-maxR,or);
+};
 const setOrientationListener = _=>{
     getOrientationPermission(_=>{
         if(window.DeviceOrientationEvent){
-            let lastPower;
-            let lastOriUnix = 0;
-            window.addEventListener('deviceorientation', (e)=> {
-                const { alpha, beta, gamma, acceleration } = e;
-                const unix = +new Date();
-                // if((unix - lastOriUnix) < 50) return;
-
-                // console.log( { alpha, beta, gamma });
-
-                or = -gamma / 2;
-                // or = or * (alpha > 180?-1:1);
-                or = Math.min(maxR,or);
-                or = Math.max(-maxR,or);
-                // console.log({or})
-                // out.innerHTML = JSON.stringify({ alpha, beta, gamma },0,2);
-                return;
-
-                lastOriUnix = unix;
-                const power = Math.max(
-                    // alpha,
-                    beta,
-                    gamma
-                );
-
-                // console.log(e,beta,gamma);
-                if(lastPower === undefined){
-                    lastPower = power;
-                }
-                const g = power - lastPower;
-                const gg = Math.abs(g * 0.5);
-                if(Math.abs(v.w) < gg){
-                    v.w = (v.w<0?-1:1) * (Math.abs(v.w) + gg);
-                }
-                lastPower = power;
-
-            });
+            window.addEventListener('deviceorientation', onDeviceOrientation );
         };
     });
 };
@@ -358,12 +335,13 @@ const magicForce = _=>{
         Math.random()*3000+2000
     );
 };
-
+const triggerMagicLinkEl = document.querySelector('.trigger-magic-link');
 const triggerMagic = _=>{
     // Flip the status flag
     magicForceFlag = !magicForceFlag;
 
     htmlEl.setAttribute('data-magic-force',magicForceFlag);
+    triggerMagicLinkEl.setAttribute('data-active',magicForceFlag);
     
     clearTimeout(magicForceTimerHandle);
 

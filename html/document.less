@@ -104,6 +104,28 @@ canvas{
     }
 }
 
+
+.ctrl-box{
+    position: absolute;
+    bottom:0;
+    left:0;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 4px;
+    a{
+        padding:0 4px;
+    }
+}
+.trigger-magic-link{
+    &:before{
+        content: 'Auto';
+    }
+    &[data-active="true"]{
+        background: #182562;
+    }
+}
+
+
 footer{
     position: absolute;
     bottom:0;
@@ -120,14 +142,6 @@ footer{
         }
     }
 }
-.ctrl-box{
-    position: absolute;
-    bottom:0;
-    left:0;
-    font-size: 12px;
-    line-height: 20px;
-    padding: 4px 8px;
-}
 button{
     border:0;
     background:#000;
@@ -138,20 +152,8 @@ button{
     border-radius:4px; 
     cursor: pointer;
 }
-.set-orientation-box{
+.set-orientation-link{
     display: none;
-    div&{
-        box-shadow: 0 0 10px rgba(0,0,0,.1);
-        position: absolute;
-        bottom:0;
-        left:0;
-        right:0;
-        background: rgba(23,37,98,.9);
-        // margin: 20px;
-        // border-radius:8px;
-        padding:20px;
-        text-align: center;
-    }
 }
 [data-text]{
     &:before{
@@ -160,12 +162,13 @@ button{
 }
 
 html[data-can-orientation="true"]{
-    .set-orientation-box{
+    .set-orientation-link{
         display: block;
     }
 }
 html[data-permission-state="true"]{
-    .set-orientation-box{
+    .set-orientation-link{
         display: none;
     }
 }
+
