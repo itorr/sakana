@@ -1,20 +1,25 @@
-<a href="https://lab.magiconch.com/sakana/?v=takina" target="_blank"><img src="sakana.png" height="200px"></a><a href="https://lab.magiconch.com/sakana/?v=chisato" target="_blank"><img src="chisato.png" height="200px"></a>
+<a href="https://lab.magiconch.com/sakana/?v=takina" target="_blank">
+  <img src="sakana.png" height="180px">
+</a><a href="https://lab.magiconch.com/sakana/?v=chisato" target="_blank">
+  <img src="chisato.png" height="180px">
+</a>
 
 # 🐟「Sakana! Simulator」石蒜模拟器
 
-## 地址
-https://lab.magiconch.com/sakana/
+## 在线地址 https://lab.magiconch.com/sakana/
 
+> さかなー－－－！！
 
 ## 插画来源
 大伏アオ
 [@blue00f4](https://twitter.com/blue00f4)
 [Pixiv](pixiv.me/aoiroblue1340)
-（已从老师推特取得在网页中使用两张插画的非商用授权）
 
-https://twitter.com/blue00f4/status/1551887529615687680
+**已从老师推特取得在网页中使用两张插画 (
+[その1](https://twitter.com/blue00f4/status/1551887529615687680)、[その2](https://twitter.com/blue00f4/status/1552066743853813760)
+) 的非商用授权**
+`ヾ(^▽^ヾ)`
 
-https://twitter.com/blue00f4/status/1552066743853813760
 
 ## 功能
  - 按住立牌拖拽、松手后立牌会向反方向弹跳
