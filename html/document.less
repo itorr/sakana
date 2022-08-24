@@ -16,7 +16,8 @@ html{
 
     &[data-alpha="true"]{
         background: none;
-        footer{
+        footer,
+        .ctrl-box{
             display: none;
         }
     }
@@ -32,8 +33,9 @@ body{
     height: var(--app-height);
 }
 a{
-    color: #FFF;
+    color: #a4c5e1;
     text-decoration: none;
+    cursor: pointer;
 }
 .app{
     display: block;
@@ -113,11 +115,18 @@ footer{
     
     a{
         display: block;
-        color: #a4c5e1;
         span{
             opacity: 0.5;
         }
     }
+}
+.ctrl-box{
+    position: absolute;
+    bottom:0;
+    left:0;
+    font-size: 12px;
+    line-height: 20px;
+    padding: 4px 8px;
 }
 button{
     border:0;
@@ -142,6 +151,11 @@ button{
         // border-radius:8px;
         padding:20px;
         text-align: center;
+    }
+}
+[data-text]{
+    &:before{
+        content: attr(data-text);
     }
 }
 

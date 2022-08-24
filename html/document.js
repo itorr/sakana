@@ -1,3 +1,5 @@
+const htmlEl = document.documentElement;
+
 let device = String(navigator.userAgent.match(/steam|macos/i)).toLowerCase();
 
 if(
@@ -6,7 +8,7 @@ if(
     (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
 ) device = 'ios';
 
-document.documentElement.setAttribute('data-device',device)
+htmlEl.setAttribute('data-device',device)
 
 
 
@@ -24,7 +26,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 });
 
 if(params.alpha){
-    document.documentElement.setAttribute('data-alpha',params.alpha);
+    htmlEl.setAttribute('data-alpha',params.alpha);
 }
 
 
@@ -61,7 +63,7 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
 const resize = _=>{
-    width = Math.min(document.documentElement.offsetWidth,800);
+    width = Math.min(htmlEl.offsetWidth,800);
     height = 800;
 
     canvas.width = width;
@@ -279,7 +281,7 @@ const canOrientation = !!(
     typeof window.DeviceOrientationEvent['requestPermission'] === 'function'
 );
 
-document.documentElement.setAttribute('data-can-orientation',canOrientation);
+htmlEl.setAttribute('data-can-orientation',canOrientation);
 
 const getOrientationPermission = onOver=>{
     if (!canOrientation) return onOver();
@@ -288,7 +290,7 @@ const getOrientationPermission = onOver=>{
         // console.log({permissionState})
         if(permissionState !== 'granted') return //alert('获取权限失败');
 
-        document.documentElement.setAttribute('data-permission-state',true);
+        htmlEl.setAttribute('data-permission-state',true);
         onOver();
     });
 };
@@ -339,29 +341,40 @@ let magicForceTimerHandle = undefined;
 let magicForceFlag = false;
 
 const magicForce = _=>{
-    // Add random velocities in the vertical and horizontal directions
-    v.t = v.t + (Math.random()-0.5)*150;
-    v.w = v.w + (Math.random()-0.5)*200;
+
+    // 0.1 probability to Switch Character
+    if(Math.random() < 0.1){
+        switchValue();
+    }else{
+        // Add random velocities in the vertical and horizontal directions
+        v.t = v.t + (Math.random()-0.5)*150;
+        v.w = v.w + (Math.random()-0.5)*200;
+    }
+
 
     // Set a variable delay between applying magic powers
-    magicForceTimerHandle = setTimeout(magicForce, Math.random()*1000+500);
+    magicForceTimerHandle = setTimeout(
+        magicForce, 
+        Math.random()*3000+2000
+    );
 };
 
 const triggerMagic = _=>{
     // Flip the status flag
     magicForceFlag = !magicForceFlag;
+
+    htmlEl.setAttribute('data-magic-force',magicForceFlag);
     
+    clearTimeout(magicForceTimerHandle);
+
     // Clear the timer or start a timer based on the new flag
     if (magicForceFlag)
         magicForceTimerHandle = setTimeout(magicForce, Math.random()*1000+500);
-    else
-        clearTimeout(magicForceTimerHandle);
 };
 
 // setOrientationListener();
 
-document.querySelector('.bed').addEventListener('click',e=>{
-    e.preventDefault();
+const switchValue = _=>{
     el.classList.toggle('chisato');
 
     if(el.classList.contains('chisato')){
@@ -371,6 +384,12 @@ document.querySelector('.bed').addEventListener('click',e=>{
         v = deepCopy(Values['takina']);
         history.replaceState({},'','?v=takina');
     }
+}
+
+document.querySelector('.bed').addEventListener('click',e=>{
+    e.preventDefault();
+
+    switchValue();
 })
 
 
