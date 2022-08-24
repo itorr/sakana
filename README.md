@@ -31,8 +31,8 @@
 
  - 添加 `?v=chisato` 请求参数，可获得 [锦木千束](https://lab.magiconch.com/sakana/?v=chisato) 专属链接
  - 添加 `?v=takina` 请求参数，可获得 [井上泷奈](https://lab.magiconch.com/sakana/?v=takina) 专属链接
- - 添加 `?alpha=true` 请求参数可以获得透明背景 [例](https://lab.magiconch.com/sakana/?alpha=true)
-
+ - 添加 `?alpha=true` 请求参数，可获得透明背景 [例](https://lab.magiconch.com/sakana/?alpha=true)
+ - 添加 `?background=red` 请求参数，可自定义背景 `red` `#FF00FF` `'#d37f7f url(chisato.png)'` 均可 [例](https://lab.magiconch.com/sakana/?background=%23d37f7f%20url(chisato.png))
 ## 本地调试
 `document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)
 
