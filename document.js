@@ -338,7 +338,7 @@ const setOrientationListener = _=>{
     });
 };
 
-setOrientationListener();
+// setOrientationListener();
 
 
 document.querySelector('.bed').addEventListener('click',e=>{

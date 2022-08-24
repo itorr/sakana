@@ -131,16 +131,18 @@ button{
 }
 .set-orientation-box{
     display: none;
-    box-shadow: 0 0 10px rgba(0,0,0,.1);
-    position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    background: rgba(23,37,98,.9);
-    // margin: 20px;
-    // border-radius:8px;
-    padding:20px;
-    text-align: center;
+    div&{
+        box-shadow: 0 0 10px rgba(0,0,0,.1);
+        position: absolute;
+        bottom:0;
+        left:0;
+        right:0;
+        background: rgba(23,37,98,.9);
+        // margin: 20px;
+        // border-radius:8px;
+        padding:20px;
+        text-align: center;
+    }
 }
 
 html[data-can-orientation="true"]{
