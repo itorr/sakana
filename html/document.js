@@ -26,9 +26,6 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
 if(params.alpha){
     document.documentElement.setAttribute('data-alpha',params.alpha);
 }
-if(params.alpha){
-    document.documentElement.setAttribute('data-alpha',params.alpha);
-}
 
 
 const Values = {
