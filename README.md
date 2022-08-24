@@ -13,6 +13,8 @@ https://lab.magiconch.com/sakana/
 
 https://twitter.com/blue00f4/status/1551887529615687680
 
+https://twitter.com/blue00f4/status/1552066743853813760
+
 ## 功能
  - 按住立牌拖拽、松手后立牌会向反方向弹跳
  - 点击底座切换角色
