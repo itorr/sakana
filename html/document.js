@@ -63,11 +63,18 @@ const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 
 const resize = _=>{
-    width = Math.min(htmlEl.offsetWidth,800);
+    const { offsetWidth, offsetHeight } = htmlEl;
+    width = Math.min(offsetWidth,800);
     height = 800;
 
     canvas.width = width;
     canvas.height = height;
+
+    const scalc = offsetWidth / offsetHeight;
+
+    const isSuperVertical = scalc < 0.5757;
+
+    htmlEl.setAttribute('data-is-super-vertical',isSuperVertical);
 };
 
 resize();

@@ -21,6 +21,14 @@ html{
             display: none;
         }
     }
+
+    &[data-is-super-vertical="true"]{
+        body{
+            box-sizing: border-box;
+            padding-bottom: 60px;
+            // height: calc(var(--app-height) - 60px);
+        }
+    }
 }
 
 body{
@@ -114,6 +122,7 @@ canvas{
     padding: 4px 4px;
     a{
         padding:0 4px;
+        border-radius:2px;
     }
 }
 .trigger-magic-link{
