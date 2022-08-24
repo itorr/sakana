@@ -24,7 +24,7 @@
 ## 功能
  - 按住立牌拖拽、松手后立牌会向反方向弹跳
  - 点击底座切换角色
- - 手机开启陀螺仪权限、摇一摇可甩动立牌
+ - 手机开启陀螺仪权限、摇一摇可甩动立牌 [#12 待解决](https://github.com/itorr/sakana/pull/12)
  - 自走模式，以随机间隔、施加一个大小随机的力 [#7](https://github.com/itorr/sakana/pull/7) [@milkybird98](https://github.com/milkybird98)
  - 音效，在适当区间松手时的语音效果 [#9](https://github.com/itorr/sakana/pull/9) [@zthxxx](https://github.com/zthxxx)
  
