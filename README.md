@@ -4,7 +4,7 @@
   <img src="html/chisato.png" height="160px">
 </a>
 
-# 🐟「Sakana! Simulator」石蒜模拟器
+# 🐟「Sakana!」石蒜模拟器
 
 地址 https://lab.magiconch.com/sakana/
 
