@@ -335,8 +335,30 @@ const setOrientationListener = _=>{
     });
 };
 
-// setOrientationListener();
+let magicForceTimerHandle = undefined;
+let magicForceFlag = false;
 
+const magicForce = _=>{
+    // Add random velocities in the vertical and horizontal directions
+    v.t = v.t + (Math.random()-0.5)*150;
+    v.w = v.w + (Math.random()-0.5)*200;
+
+    // Set a variable delay between applying magic powers
+    magicForceTimerHandle = setTimeout(magicForce, Math.random()*1000+500);
+};
+
+const triggerMagic = _=>{
+    // Flip the status flag
+    magicForceFlag = !magicForceFlag;
+    
+    // Clear the timer or start a timer based on the new flag
+    if (magicForceFlag)
+        magicForceTimerHandle = setTimeout(magicForce, Math.random()*1000+500);
+    else
+        clearTimeout(magicForceTimerHandle);
+};
+
+// setOrientationListener();
 
 document.querySelector('.bed').addEventListener('click',e=>{
     e.preventDefault();
