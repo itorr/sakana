@@ -79,7 +79,7 @@ const resize = _=>{
 
 resize();
 
-const rotate = (cx, cy, x, y, angle)=> {
+const rotatePoint = (cx, cy, x, y, angle)=> {
     const radians = (Math.PI / 180) * angle;
     const cos = Math.cos(radians);
     const sin = Math.sin(radians);
@@ -118,7 +118,7 @@ const draw = _=>{
     const cx = 0;
     const cy = -100;
 
-    const n = rotate(
+    const n = rotatePoint(
         cx,
         cy,
         x,
@@ -139,6 +139,7 @@ const draw = _=>{
     ctx.stroke();
     ctx.restore();
 
+    // 这后面是 canvas 绘制角色部分逻辑，没有做 retina 兼容，目前用的 DOM 节点、暂时屏蔽掉
     return;
     // ctx.clearRect(0,0,width,height);
     ctx.save();
