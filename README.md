@@ -25,3 +25,6 @@ https://twitter.com/blue00f4/status/1552066743853813760
 添加 `?v=takina` 请求参数，可获得 [井上泷奈](https://lab.magiconch.com/sakana/?v=takina) 专属链接
 
 添加 `?alpha=true` 请求参数可以获得透明背景 [例](https://lab.magiconch.com/sakana/?alpha=true)
+
+## 本地调试
+`document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)
