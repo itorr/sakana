@@ -161,6 +161,18 @@ button{
     border-radius:4px; 
     cursor: pointer;
 }
+
+.set-voice {
+    cursor: pointer;
+
+    &.voice-mute {
+        text-decoration: line-through;
+        &::before, &::after {
+            content: '\00a0';
+        }
+    }
+}
+
 .set-orientation-link{
     display: none;
 }
