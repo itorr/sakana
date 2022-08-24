@@ -37,3 +37,6 @@
 
 ## GitHub
 https://github.com/itorr/sakana/
+
+## 微博
+https://weibo.com/1197780522/M2xbREtGI
