@@ -76,7 +76,7 @@ const toggleVoiceMute = () => {
 };
 
 
-let runing = true;
+let running = true;
 
 const deepCopy = v=> JSON.parse(JSON.stringify(v));
 
@@ -212,7 +212,7 @@ const init = onOver=>{
 }
 let or = 0;
 const run = _=>{
-    if(!runing) return;
+    if(!running) return;
 
     requestAnimationFrame(run);
 
@@ -254,7 +254,7 @@ const move = (x,y)=>{
 }
 el.onmousedown = e=>{
     e.preventDefault();
-    runing = false;
+    running = false;
     const { pageX, pageY } = e;
     const _downPageX = pageX;
     const _downPageY = pageY;
@@ -267,7 +267,7 @@ el.onmousedown = e=>{
         document.onmousemove = null;
         document.onmouseup = null;
 
-        runing = true;
+        running = true;
         playVoice();
         run();
     };
@@ -287,7 +287,7 @@ el.onmousedown = e=>{
 
 el.ontouchstart = e=>{
     e.preventDefault();
-    runing = false;
+    running = false;
     if(!e.touches[0]) return;
 
     const { pageX, pageY } = e.touches[0];
@@ -301,7 +301,7 @@ el.ontouchstart = e=>{
         document.ontouchmove = null;
         document.ontouchend = null;
 
-        runing = true;
+        running = true;
         playVoice();
         run();
     };
