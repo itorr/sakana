@@ -69,9 +69,12 @@ const Voices = {
     chisato: new Audio('chinanago.mp3'),
     takina: new Audio('sakana.mp3'),
 
-    isMute: false
+    isMute: true
 };
-
+voiceButton.setAttribute(
+    'data-active',
+    Voices.isMute
+);
 Voices.takina.volume = Voices.chisato.volume = 0.8;
 Voices.takina.muted = Voices.chisato.muted = true;
 
