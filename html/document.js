@@ -31,7 +31,7 @@ if(params.alpha){
 
 // 自定义背景色
 if(params.background){
-    htmlEl.setAttribute('data-alpha',params.alpha);
+    htmlEl.setAttribute('data-alpha',true);
     htmlEl.style.background = params.background;
 }
 
@@ -52,6 +52,15 @@ const Values = {
         d: 0.988 // 衰减
     }
 };
+
+
+// 自定义衰减
+if(params.decay){
+    let decay = +params.decay;
+    for(let key in Values){
+        Values[key].d = decay;
+    }
+}
 
 
 const voiceButton = document.querySelector('.set-voice');
