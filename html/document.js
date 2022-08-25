@@ -493,7 +493,7 @@ console.log(
 console.log(
     '绘: %c大伏アオ %c已取得在网页中使用的非商用授权',
     'font-weight:bold',
-    'color:red',
+    'color:#C34',
 
     'https://twitter.com/blue00f4/status/1551887529615687680',
     'https://twitter.com/blue00f4/status/1552066743853813760',
