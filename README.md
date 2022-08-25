@@ -33,7 +33,7 @@
  - 添加 `?v=chisato` 请求参数，可获得 [锦木千束](https://lab.magiconch.com/sakana/?v=chisato) 专属链接
  - 添加 `?v=takina` 请求参数，可获得 [井上泷奈](https://lab.magiconch.com/sakana/?v=takina) 专属链接
  - 添加 `?alpha=true` 请求参数，可获得透明背景 [例](https://lab.magiconch.com/sakana/?alpha=true)
- - 添加 `?background=red` 请求参数，可自定义背景 `red` `#FF00FF` `'#d77 url(chisato.png)'` 均可 [例](https://lab.magiconch.com/sakana/?background=%23d77%20url(chisato.png))
+ - 添加 `?background=red` 请求参数，可自定义背景 `#FF00FF` `'#d77 url(chisato.png)'` 均可 [例](https://lab.magiconch.com/sakana/?background=%23d77%20url(chisato.png))
  - 添加 `?decay=0.99` 请求参数，自定义衰减 [无阻尼永续例](https://lab.magiconch.com/sakana/?decay=1) [#11](https://github.com/itorr/sakana/issues/11)
  - 添加 `?inertia=0.1` 请求参数，自定义惯性 [超慢速例](https://lab.magiconch.com/sakana/??inertia=0.001)
 
