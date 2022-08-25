@@ -13,13 +13,13 @@ htmlEl.setAttribute('data-device',device)
 
 
 const sticky = 0.1;
+let inertia = 0.1;
 const maxR = 60;
 const maxY = 110;
 const minY = -maxY;
 
 const el = document.querySelector('.main');
 const boxEl = document.querySelector('.single-box');
-const inertia = 0.1;
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
@@ -34,6 +34,12 @@ if(params.background){
     htmlEl.setAttribute('data-alpha',true);
     htmlEl.style.background = params.background;
 }
+
+// 自定义惯性
+if(params.inertia){
+    inertia = +params.inertia;
+}
+
 
 
 const Values = {
