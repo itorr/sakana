@@ -25,6 +25,7 @@ const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
 });
 
+// 透明背景
 if(params.alpha){
     htmlEl.setAttribute('data-alpha',params.alpha);
 }
@@ -360,7 +361,7 @@ const playVoice = () => {
             Math.abs(v.r) <= 4
             && Math.abs(v.y) >= 20
         ) {
-            console.log('nice chin~a~na~go~');
+            console.log('%cchin~a~na~go~','color:#f4eed8;background-color:#c53c48;padding:2px 4px;');
             Voices.chisato.play();
         };
     } else {
@@ -369,7 +370,7 @@ const playVoice = () => {
             v.r >= Values.takina.r
             && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
         ) {
-            console.log('nice sakana~');
+            console.log('%csakana~','color:#918789;background-color:#253453;padding:2px 4px;');
             Voices.takina.play();
         };
     };
