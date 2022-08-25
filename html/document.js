@@ -229,10 +229,9 @@ const init = onOver=>{
     // })
 }
 let or = 0;
+const cut = 0.1;
 const run = _=>{
     if(!running) return;
-
-    requestAnimationFrame(run);
 
     let { r,y,t,w,d } = v;
 
@@ -246,6 +245,16 @@ const run = _=>{
     v.t = t * d;
     v.y = y;
 
+    // 小于一定动作时停止重绘 #20
+    if(
+        Math.max(
+            Math.abs(v.w),
+            Math.abs(v.r),
+            Math.abs(v.t),
+            Math.abs(v.y),
+        ) < cut) return;
+
+    requestAnimationFrame(run);
     draw();
 };
 
