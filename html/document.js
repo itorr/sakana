@@ -13,7 +13,7 @@ htmlEl.setAttribute('data-device',device)
 
 
 const sticky = 0.1;
-let inertia = 0.1;
+let inertia = 0.08;
 const maxR = 60;
 const maxY = 110;
 const minY = -maxY;
