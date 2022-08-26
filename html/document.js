@@ -1,3 +1,23 @@
+const LOCALE = {
+    'zh-CN': {
+        gyroscope: '陀螺仪',
+        mute: '静音',
+        magic: '自动',
+        weibo: '微博',
+        image: '绘',
+        program: '程序',
+    },
+    'en-US': {
+        gyroscope: 'Gyroscope',
+        mute: 'Mute',
+        magic: 'Auto',
+        weibo: 'Weibo',
+        image: 'Image',
+        program: 'Program',
+    }
+};
+
+
 const htmlEl = document.documentElement;
 
 let device = String(navigator.userAgent.match(/steam|macos/i)).toLowerCase();
