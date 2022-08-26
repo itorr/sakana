@@ -474,6 +474,10 @@ const switchValue = _=>{
         v = deepCopy(Values['takina']);
         params.v = 'takina';
     }
+    if(!running){
+        running = true;
+        requestAnimationFrame(run);
+    }
 }
 
 document.querySelector('.bed').addEventListener('click',e=>{
