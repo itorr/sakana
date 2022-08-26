@@ -102,8 +102,9 @@ const toggleVoiceMute = () => {
 
 let running = true;
 
-const deepCopy = v=> JSON.parse(JSON.stringify(v));
-
+const deepCopy = v => typeof window.structuredClone === 'function'
+    ? window.structuredClone(v)
+    : JSON.parse(JSON.stringify(v));
 
 el.classList.add(params.v);
 let v = deepCopy(Values[params.v] || Values['takina']);
