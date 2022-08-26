@@ -37,7 +37,7 @@
  - 添加 `?background=red` 请求参数，可自定义背景 `#FF00FF` `'#d77 url(chisato.png)'` 均可 [例](https://lab.magiconch.com/sakana/?background=%23d77%20url(chisato.png))
  - 添加 `?decay=0.99` 请求参数，自定义衰减 [无阻尼永续例](https://lab.magiconch.com/sakana/?decay=1) [#11](https://github.com/itorr/sakana/issues/11)
  - 添加 `?inertia=0.1` 请求参数，自定义惯性 [超慢速例](https://lab.magiconch.com/sakana/?inertia=0.001)
- - 添加 `?lang=en-US` 请求参数，自定义语言 [英文](https://lab.magiconch.com/sakana/??lang=en-US)
+ - 添加 `?lang=en-US` 请求参数，自定义语言 [英文](https://lab.magiconch.com/sakana/?lang=en-US) [日语](https://lab.magiconch.com/sakana/?lang=ja_JP)
 
 
 ## 本地调试
