@@ -254,6 +254,8 @@ const run = _=>{
 
     // 小于一定动作时停止重绘 #20
     if(
+        !magicForceFlag
+        &&
         Math.max(
             Math.abs(v.w),
             Math.abs(v.r),
