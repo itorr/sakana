@@ -296,6 +296,8 @@ el.onmousedown = e=>{
     // 确保通过用户触发事件获得 audio 播放授权
     Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
 
+    v.w = 0;
+    v.t = 0;
     document.onmouseup = e=>{
         e.preventDefault();
         document.onmousemove = null;
@@ -331,6 +333,8 @@ el.ontouchstart = e=>{
     // 确保通过用户触发事件获得 audio 播放授权
     Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
 
+    v.w = 0;
+    v.t = 0;
     document.ontouchend = e=>{
         document.ontouchmove = null;
         document.ontouchend = null;
