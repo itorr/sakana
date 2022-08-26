@@ -17,7 +17,7 @@ const LOCALE_SRC = {
     image: "Image",
     program: "Program",
   },
-  "ja_JP": {
+  "ja-JP": {
     lang: "言語",
     gyroscope: "水準器",
     mute: "靜音",
@@ -32,7 +32,10 @@ const AVAIL_LANGS = Object.keys(LOCALE_SRC).sort();
 const locale = {
   get: () => {
     let lang = "zh-CN";
-    const paramLang = new URLSearchParams(location.search).get("lang");
+    let paramLang = new URLSearchParams(location.search).get("lang");
+    if(paramLang){
+      paramLang = paramLang.replace('_','-');
+    }
     if (AVAIL_LANGS.includes(paramLang)) {
       lang = paramLang;
     }
