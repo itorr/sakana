@@ -230,7 +230,7 @@ const loadImage = (src,onOver)=>{
 };
 let sakanaImageEl;
 const init = onOver=>{
-    // loadImage('sakana.png',el=>{
+    // loadImage('takina.png',el=>{
         // sakanaImageEl = el;
         onOver();
     // })
