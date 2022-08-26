@@ -40,7 +40,8 @@
  - 添加 `?lang=en-US` 请求参数，自定义语言 [英文](https://lab.magiconch.com/sakana/?lang=en-US) [日语](https://lab.magiconch.com/sakana/?lang=ja_JP)
 
 #### 组合参数例
-`?inertia=0.001&decay=1&v=takina&lang=ja_JP` [超慢速无阻尼泷奈日语例](https://lab.magiconch.com/sakana/?inertia=0.001&decay=1&v=takina&lang=ja_JP)
+ - [超高速微阻尼千束英文例](https://lab.magiconch.com/sakana/?inertia=0.7&decay=0.999&v=chisato&lang=en-US)
+ - [超慢速无阻尼泷奈日文例](https://lab.magiconch.com/sakana/?inertia=0.001&decay=1&v=takina&lang=ja_JP)
 
 ## 本地调试
 `document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)
