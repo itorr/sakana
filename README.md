@@ -48,5 +48,9 @@
 ## GitHub
 https://github.com/itorr/sakana/
 
+## 衍生
+ - 网页小组件版本 [Demo](https://sakana.dsrkafuu.net/) [@dsrkafuu/sakana-widget](https://github.com/dsrkafuu/sakana-widget) 
+
+
 ## 微博
 https://weibo.com/1197780522/M2xbREtGI
