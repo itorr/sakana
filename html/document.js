@@ -356,7 +356,8 @@ el.ontouchstart = e=>{
 };
 
 
-
+const chisatoConsoleStyle = 'color:#FED;background-color:#C34;padding:2px 4px;';
+const takinaConsoleStyle = 'color:#CCC;background-color:#235;padding:2px 4px;';
 const playVoice = () => {
     if (Voices.isMute) return;
     // console.log({ r: v.r, y: v.y })
@@ -367,7 +368,7 @@ const playVoice = () => {
             Math.abs(v.r) <= 4
             && Math.abs(v.y) >= 20
         ) {
-            console.log('%cchin~a~na~go~','color:#FED;background-color:#C34;padding:2px 4px;');
+            console.log('%cchin~a~na~go~',chisatoConsoleStyle);
             Voices.chisato.play();
         };
     } else {
@@ -376,7 +377,7 @@ const playVoice = () => {
             v.r >= Values.takina.r
             && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
         ) {
-            console.log('%csakana~','color:#CCC;background-color:#235;padding:2px 4px;');
+            console.log('%csakana~',takinaConsoleStyle);
             Voices.takina.play();
         };
     };
@@ -492,17 +493,17 @@ window.addEventListener('resize',resize);
 
 console.log(
     '%c錦木千束 https://lab.magiconch.com/sakana/?v=chisato',
-    'color:#FED;background-color:#C34;padding:2px 4px;',
+    chisatoConsoleStyle,
 );
 console.log(
     '%c井ノ上たきな https://lab.magiconch.com/sakana/?v=takina',
-    'color:#CCC;background-color:#235;padding:2px 4px;',
+    takinaConsoleStyle,
 );
 
 console.log(
     '%c永续超慢速%chttps://lab.magiconch.com/sakana/?inertia=0.001&decay=1',
-    'color:#FED;background-color:#C34;padding:2px 4px;',
-    'color:#CCC;background-color:#235;padding:2px 4px;',
+    chisatoConsoleStyle,
+    takinaConsoleStyle,
 );
 
 console.log(
