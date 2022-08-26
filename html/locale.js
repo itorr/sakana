@@ -17,6 +17,15 @@ const LOCALE_SRC = {
     image: "Image",
     program: "Program",
   },
+  "ja_JP": {
+    lang: "言語",
+    gyroscope: "水準器",
+    mute: "靜音",
+    magic: "自動",
+    weibo: "微博",
+    image: "絵",
+    program: "アプリ",
+  },
 };
 const AVAIL_LANGS = Object.keys(LOCALE_SRC).sort();
 
