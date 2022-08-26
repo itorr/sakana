@@ -254,14 +254,12 @@ const run = _=>{
 
     // 小于一定动作时停止重绘 #20
     if(
-        !magicForceFlag
-        &&
         Math.max(
             Math.abs(v.w),
             Math.abs(v.r),
             Math.abs(v.t),
             Math.abs(v.y),
-        ) < cut) return;
+        ) < cut) return running = false;
 
     requestAnimationFrame(run);
     draw();
@@ -437,6 +435,10 @@ const magicForce = _=>{
         v.w = v.w + (Math.random()-0.5)*200;
     }
 
+    if(!running){
+        running = true;
+        requestAnimationFrame(run);
+    }
 
     // Set a variable delay between applying magic powers
     magicForceTimerHandle = setTimeout(
@@ -457,6 +459,7 @@ const triggerMagic = _=>{
     // Clear the timer or start a timer based on the new flag
     if (magicForceFlag)
         magicForceTimerHandle = setTimeout(magicForce, Math.random()*1000+500);
+
 };
 
 // setOrientationListener();
