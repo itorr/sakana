@@ -24,7 +24,7 @@ const LOCALE_SRC = {
     magic: "自動",
     weibo: "微博",
     image: "絵",
-    program: "アプリ",
+    program: "網頁",
   },
 };
 const AVAIL_LANGS = Object.keys(LOCALE_SRC).sort();
