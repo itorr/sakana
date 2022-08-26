@@ -23,6 +23,11 @@ const boxEl = document.querySelector('.single-box');
 
 const params = new Proxy(new URLSearchParams(window.location.search), {
     get: (searchParams, prop) => searchParams.get(prop),
+    set: (searchParams, prop, value) => {
+        searchParams.set(prop, value);
+        window.history.replaceState(null, null, `?${searchParams.toString()}`);
+        return true;
+    }
 });
 
 // 透明背景
@@ -458,10 +463,10 @@ const switchValue = _=>{
 
     if(el.classList.contains('chisato')){
         v = deepCopy(Values['chisato']);
-        history.replaceState({},'','?v=chisato');
+        params.v = 'chisato';
     }else{
         v = deepCopy(Values['takina']);
-        history.replaceState({},'','?v=takina');
+        params.v = 'takina';
     }
 }
 
