@@ -51,6 +51,6 @@ https://github.com/itorr/sakana/
 ## 衍生
  - 网页小组件版本 [Demo](https://sakana.dsrkafuu.net/) [@dsrkafuu/sakana-widget](https://github.com/dsrkafuu/sakana-widget) 
  - 壁纸引擎 @而我撑伞 [BV1vN4y1F7ML](https://www.bilibili.com/video/BV1vN4y1F7ML) [创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2854221525)
-
+ - 壁纸引擎 @麻匪 [BV1jG4y1k7oA](https://www.bilibili.com/video/bv1jG4y1k7oA) [创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2854192204)
 ## 微博
 https://weibo.com/1197780522/M2xbREtGI
