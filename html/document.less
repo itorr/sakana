@@ -49,22 +49,10 @@ a{
     display: block;
     height:100%;
 }
-canvas{
-    position: absolute;
-    // box-shadow:0 0 0 2px blue;
-    // top:0;
-    left:0;
-    right:0;
-    bottom:0;
-    margin:0 auto;
-    // width: 100vw;
-    pointer-events: none;
-}
 .single-box{
     margin:140px auto 0;
-    width: 200px;
+    // width: 200px;
     height: 500px;
-    // box-shadow:0 0 0 2px blue;
     position: relative;
 
     position: absolute;
@@ -73,6 +61,16 @@ canvas{
     right:0;
     pointer-events: none;
 
+    canvas{
+        position: absolute;
+        // top:0;
+        left:0;
+        right:0;
+        bottom:0;
+        margin:0 auto;
+        // width: 100vw;
+        pointer-events: none;
+    }
     .main{
         // width: 140px;
         // height: 200px;
@@ -84,7 +82,9 @@ canvas{
         height: var(--main-height);
 
         position: absolute;
-        left: calc( 200px / 2 - var(--main-width) / 2 );
+        left: 0;
+        right:0;
+        margin:0 auto;
         // top: calc( 240px - var(--main-height) );
         bottom: 260px;
         // box-shadow:0 0 0 2px red;
@@ -105,7 +105,9 @@ canvas{
         width: 160px;
         height: 20px;
         position: absolute;
-        left: 20px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
         bottom: 0;
         // box-shadow:0 0 0 2px green;
         background: rgba(255,255,255,.5) no-repeat 50% 50%;
@@ -198,12 +200,30 @@ html[data-permission-state="true"]{
 }
 
 
-@media (max-height:800px) {
+@media (max-height:800px) and (min-height:600px) {
     .app{
         position: absolute;
         top: 0;
         left: 0;
         right: 0;
         min-height: 600px;
+    }
+}
+@media (max-height:600px) {
+    .single-box{
+        transform: scale(.7);
+        transform-origin: 50% 100%;
+    }
+}
+@media (max-height:450px) {
+    .single-box{
+        transform: scale(.6);
+        transform-origin: 50% 100%;
+    }
+}
+@media (max-height:350px) {
+    .single-box{
+        transform: scale(.5);
+        transform-origin: 50% 100%;
     }
 }

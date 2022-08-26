@@ -118,7 +118,7 @@ const ctx = canvas.getContext('2d');
 
 const resize = _=>{
     const { offsetWidth, offsetHeight } = htmlEl;
-    width = Math.min(offsetWidth,800);
+    width = Math.min(offsetWidth,600);
     height = 800;
 
     canvas.width = width;
