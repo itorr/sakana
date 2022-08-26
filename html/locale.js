@@ -20,7 +20,7 @@ const LOCALE_SRC = {
   "ja_JP": {
     lang: "言語",
     gyroscope: "水準器",
-    mute: "靜音",
+    mute: "ミュート",
     magic: "自動",
     weibo: "微博",
     image: "絵",
