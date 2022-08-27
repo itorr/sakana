@@ -51,10 +51,10 @@ if(params.inertia){
 const scale = +params.scale || 'auto';
 
 // 元素位移
-
+const  translateY =  params.translateY || 0;
 
 htmlEl.setAttribute('data-scale', scale);
-boxEl.style.transform = `scale(${scale})`;
+boxEl.style.transform = `scale(${scale}) translateY(${translateY})`;
 
 
 const Values = {
