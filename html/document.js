@@ -47,6 +47,12 @@ if(params.inertia){
 }
 
 
+// 设定元素缩放
+if(params.size){
+    htmlEl.setAttribute('data-size',params.size);
+    boxEl.style.transform = `scale(${params.size})`;
+}
+
 
 const Values = {
     chisato: {

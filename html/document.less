@@ -60,6 +60,8 @@ a{
     left:0;
     right:0;
     pointer-events: none;
+    
+    transform-origin: 50% 100%;
 
     canvas{
         position: absolute;
@@ -199,34 +201,34 @@ html[data-permission-state="true"]{
     }
 }
 
-
-@media (max-height:800px) and (min-height:600px) {
-    .app{
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        min-height: 600px;
+html[data-size="auto"]{
+    @media (max-height:800px) and (min-height:600px) {
+        .app{
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            min-height: 600px;
+        }
     }
-}
-@media (max-height:600px) {
-    .single-box{
-        transform: scale(.8);
-        transform-origin: 50% 100%;
+    @media (max-height:600px) {
+        .single-box{
+            transform: scale(.8);
+        }
     }
-}
-@media (max-height:550px) {
-    .single-box{
-        transform: scale(.7);
+    @media (max-height:550px) {
+        .single-box{
+            transform: scale(.7);
+        }
     }
-}
-@media (max-height:450px) {
-    .single-box{
-        transform: scale(.6);
+    @media (max-height:450px) {
+        .single-box{
+            transform: scale(.6);
+        }
     }
-}
-@media (max-height:350px) {
-    .single-box{
-        transform: scale(.5);
+    @media (max-height:350px) {
+        .single-box{
+            transform: scale(.5);
+        }
     }
 }
