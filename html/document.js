@@ -319,7 +319,7 @@ const onMouseDown = (e) => {
 
         running = true;
         playVoice();
-        run();
+        requestAnimationFrame(run);
     };
 
     document.addEventListener('mousemove',onMouseMove);
@@ -362,7 +362,7 @@ const onTouchStart = (e) => {
         
         running = true;
         playVoice();
-        run();
+        requestAnimationFrame(run);
     }
 
     document.addEventListener('touchmove',onTouchMove);
