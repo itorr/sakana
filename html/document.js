@@ -264,18 +264,32 @@ const init = onOver=>{
 }
 let or = 0;
 const cut = 0.1;
+let lastRunUnix = +new Date();
+const defaultFrameUnix = 1000/60;
 const run = _=>{
     if(!running) return;
+
+    const runUnix = +new Date();
+
+    const lastRunUnixDiff = runUnix - lastRunUnix;
+    let _inertia = inertia;
+
+    console.log(lastRunUnixDiff)
+
+    if(lastRunUnixDiff < 40){ // 如果单帧间隔超过 40ms 那就躺平不处理
+        _inertia = inertia / defaultFrameUnix * lastRunUnixDiff;
+    }
+    lastRunUnix = runUnix;
 
     let { r,y,t,w,d } = v;
 
     w = w - r * 2 - or;
-    r = r + w * inertia * 1.2;
+    r = r + w * _inertia * 1.2;
     v.w = w * d;
     v.r = r;
 
     t = t - y * 2;
-    y = y + t * inertia * 2;
+    y = y + t * _inertia * 2;
     v.t = t * d;
     v.y = y;
 
