@@ -38,6 +38,9 @@
  - 添加 `?decay=0.99` 请求参数，自定义衰减 [无阻尼例](https://lab.magiconch.com/sakana/?decay=1) [#11](https://github.com/itorr/sakana/issues/11)
  - 添加 `?inertia=0.1` 请求参数，自定义惯性 [超慢速例](https://lab.magiconch.com/sakana/?inertia=0.001)
  - 添加 `?lang=en-US` 请求参数，自定义语言 [英文](https://lab.magiconch.com/sakana/?lang=en-US) [日语](https://lab.magiconch.com/sakana/?lang=ja-JP)
+ - 添加 `?scale=auto` 请求参数，在小尺寸时适应高度调整缩放
+ - 添加 `?scale=0.5` 请求参数，自定义元素缩放比例
+ - 添加 `?translateY=200px` 请求参数，自定义元素垂直位移
 
 #### 组合参数例
  - [超高速微阻尼千束英文例](https://lab.magiconch.com/sakana/?inertia=0.7&decay=0.999&v=chisato&lang=en-US)
