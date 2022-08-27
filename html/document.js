@@ -54,7 +54,7 @@ const scale = +params.scale || 'auto';
 const  translateY =  params.translateY || 0;
 
 htmlEl.setAttribute('data-scale', scale);
-boxEl.style.transform = `scale(${scale}) translateY(${translateY})`;
+boxEl.style.transform = `translateY(${translateY}) scale(${scale})`;
 
 
 const Values = {
