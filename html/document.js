@@ -87,8 +87,8 @@ if(params.decay){
 const voiceButton = document.querySelector('.set-voice');
 
 const Voices = {
-    chisato: new Audio('chinanago.mp3'),
-    takina: new Audio('sakana.mp3'),
+    chisato: new Audio('chinanago.m4a'),
+    takina: new Audio('sakana.m4a'),
 
     isMute: true
 };
