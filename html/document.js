@@ -274,8 +274,6 @@ const run = _=>{
     const lastRunUnixDiff = runUnix - lastRunUnix;
     let _inertia = inertia;
 
-    console.log(lastRunUnixDiff)
-
     if(lastRunUnixDiff < 40){ // 如果单帧间隔超过 40ms 那就躺平不处理
         _inertia = inertia / defaultFrameUnix * lastRunUnixDiff;
     }
