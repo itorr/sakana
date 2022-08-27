@@ -41,12 +41,15 @@
  - 添加 `?scale=auto` 请求参数，在小尺寸时适应高度调整缩放
  - 添加 `?scale=0.5` 请求参数，自定义元素缩放比例
  - 添加 `?translateY=200px` 请求参数，自定义元素垂直位移
+ - 添加 `?r=60` 请求参数，初始角色右倾 60 度
+ - 添加 `?y=100` 请求参数，初始角色下沉 100 单位
 
 #### 组合参数例
  - [超高速微阻尼千束英文例](https://lab.magiconch.com/sakana/?inertia=0.7&decay=0.999&v=chisato&lang=en-US)
  - [超慢速无阻尼泷奈日文例](https://lab.magiconch.com/sakana/?inertia=0.001&decay=1&v=takina&lang=ja-JP)
  - [两倍慢速无阻尼千束例](https://lab.magiconch.com/sakana/?inertia=0.01&decay=1&v=chisato&scale=2&translateY=140px)
  - [超小没劲强阻尼泷奈例](https://lab.magiconch.com/sakana/?inertia=0.02&decay=0.9&scale=0.3)
+ - [默认六十度一百高泷奈例](https://lab.magiconch.com/sakana/?v=takina&r=60&y=100)
 
 ## 本地调试
 `document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)

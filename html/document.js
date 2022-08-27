@@ -118,6 +118,17 @@ const deepCopy = v => typeof window.structuredClone === 'function'
 el.classList.add(params.v);
 let v = deepCopy(Values[params.v] || Values['takina']);
 
+
+// 自定义默认动作
+if(params.r){
+    v.r = +params.r;
+}
+
+if(params.y){
+    v.y = +params.y;
+}
+
+
 let width;
 let height;
 
