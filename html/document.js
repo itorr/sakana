@@ -114,15 +114,33 @@ let height;
 
 
 const canvas = document.querySelector('canvas');
-const ctx = canvas.getContext('2d');
+let ctx;
+const superRes = 1;
+
+/**
+ * 使用两倍 DPR 初始化 Canvas
+ */
+const getCanvasContext = (canvas, cssWidth, cssHeight) => {
+    const dpr = (window.devicePixelRatio || 1) * superRes;
+    const renderWidth = cssWidth * dpr;
+    const renderHeight = cssHeight * dpr;
+    canvas.width = renderWidth;
+    canvas.height = renderHeight;
+    ctx = ctx || canvas.getContext('2d');
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+    return ctx;
+};
 
 const resize = _=>{
     const { offsetWidth, offsetHeight } = htmlEl;
     width = Math.min(offsetWidth,600);
     height = 800;
 
-    canvas.width = width;
-    canvas.height = height;
+    canvas.style.width = width + 'px';
+    canvas.style.height = height + 'px';
+    ctx = getCanvasContext(canvas, width, height);
+    setTimeout(()=> draw(), 0); // 缩放后重绘线条 (Event Loop 后保证 draw 已定义)
 
     const scalc = offsetWidth / offsetHeight;
 
