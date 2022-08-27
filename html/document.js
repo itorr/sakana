@@ -286,7 +286,8 @@ const move = (x,y)=>{
     v.t = 0;
     draw();
 }
-el.onmousedown = e=>{
+
+const onMouseDown = (e) => {
     e.preventDefault();
     running = false;
     const { pageX, pageY } = e;
@@ -298,16 +299,8 @@ el.onmousedown = e=>{
 
     v.w = 0;
     v.t = 0;
-    document.onmouseup = e=>{
-        e.preventDefault();
-        document.onmousemove = null;
-        document.onmouseup = null;
 
-        running = true;
-        playVoice();
-        run();
-    };
-    document.onmousemove = e=>{
+    const onMouseMove = (e) => {
         const rect = boxEl.getBoundingClientRect();
 
         const leftCenter = rect.left + rect.width / 2;
@@ -319,9 +312,22 @@ el.onmousedown = e=>{
         let y = pageY - _downPageY;
         move(x,y);
     };
-};
+    const onMouseUp = (e) => {
+        e.preventDefault();
+        document.removeEventListener('mousemove',onMouseMove);
+        document.removeEventListener('mouseup',onMouseUp);
 
-el.ontouchstart = e=>{
+        running = true;
+        playVoice();
+        requestAnimationFrame(run);
+    };
+
+    document.addEventListener('mousemove',onMouseMove);
+    document.addEventListener('mouseup',onMouseUp);
+};
+el.addEventListener('mousedown',onMouseDown);
+
+const onTouchStart = (e) => {
     e.preventDefault();
     running = false;
     if(!e.touches[0]) return;
@@ -335,15 +341,8 @@ el.ontouchstart = e=>{
 
     v.w = 0;
     v.t = 0;
-    document.ontouchend = e=>{
-        document.ontouchmove = null;
-        document.ontouchend = null;
 
-        running = true;
-        playVoice();
-        run();
-    };
-    document.ontouchmove = e=>{
+    const onTouchMove = (e) => {
         if(!e.touches[0]) return;
 
         const rect = boxEl.getBoundingClientRect();
@@ -357,7 +356,19 @@ el.ontouchstart = e=>{
         let y = pageY - _downPageY;
         move(x,y);
     };
+    const onTouchEnd = (e) => {
+        document.removeEventListener('touchmove',onTouchMove);
+        document.removeEventListener('touchend',onTouchEnd);
+        
+        running = true;
+        playVoice();
+        requestAnimationFrame(run);
+    }
+
+    document.addEventListener('touchmove',onTouchMove);
+    document.addEventListener('touchend',onTouchEnd);
 };
+el.addEventListener('touchstart',onTouchStart);
 
 
 const chisatoConsoleStyle = 'color:#FED;background-color:#C34;padding:2px 4px;';
