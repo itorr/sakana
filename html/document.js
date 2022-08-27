@@ -47,11 +47,14 @@ if(params.inertia){
 }
 
 
-// 设定元素缩放
-const size = +params.size || 'auto';
+// 元素缩放
+const scale = +params.scale || 'auto';
 
-htmlEl.setAttribute('data-size', size);
-boxEl.style.transform = `scale(${size})`;
+// 元素位移
+
+
+htmlEl.setAttribute('data-scale', scale);
+boxEl.style.transform = `scale(${scale})`;
 
 
 const Values = {
