@@ -115,7 +115,7 @@ let height;
 
 const canvas = document.querySelector('canvas');
 let ctx;
-const superRes = 2;
+const superRes = 1;
 
 /**
  * 使用两倍 DPR 初始化 Canvas
