@@ -48,10 +48,10 @@ if(params.inertia){
 
 
 // 设定元素缩放
-if(params.size){
-    htmlEl.setAttribute('data-size',params.size);
-    boxEl.style.transform = `scale(${params.size})`;
-}
+const size = +params.size || 'auto';
+
+htmlEl.setAttribute('data-size', size);
+boxEl.style.transform = `scale(${size})`;
 
 
 const Values = {
