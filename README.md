@@ -10,7 +10,7 @@
 
 > さかなー－－－！！
 
-支持引入多个模拟器了！[约会版](https://lab.magiconch.com/sakana/deto.html)
+支持引入多个模拟器了！ [约会版](https://lab.magiconch.com/sakana/deto.html)
 
 ## 插画来源
 大伏アオ
@@ -54,7 +54,9 @@
  - [默认六十度一百高泷奈例](https://lab.magiconch.com/sakana/?v=takina&r=60&y=100)
 
 
-## 引入个人网站
+## 引入到个人网站
+
+引入到个人网站示例 [./into.html](https://lab.magiconch.com/sakana/into.html) [源码](https://github.com/itorr/sakana/blob/main/html/into.html)
 
 ```html
 <div class="sakana-box"></div>
