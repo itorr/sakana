@@ -38,7 +38,10 @@ body{
     position: relative;
     width: 100vw;
     height: 100vh;
-    height: var(--app-height);
+    // height: var(--app-height);
+    height: -moz-available;
+    height: -webkit-fill-available;
+    height: fill-available;
 }
 a{
     color: #a4c5e1;
