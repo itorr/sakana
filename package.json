@@ -6,7 +6,7 @@
   },
   "name": "sakana",
   "description": "🐟「Sakana!」石蒜虚拟器",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "main": "html/sakana.min.js",
   "scripts": {
     "build": "node build.js"

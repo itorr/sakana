@@ -1,3 +1,9 @@
+/**
+ * Sakana!
+ * Date: 2022-08-28
+ * Author: itorr <https://github.com/itorr>
+ * Repository: https://github.com/itorr/sakana
+ */
 const Sakana = (_=>{
     /* css */
     
@@ -48,9 +54,9 @@ const Sakana = (_=>{
     Voices.takina.muted = Voices.chisato.muted = Voices.isMute;
 
 
-    const deepCopy = v => typeof window.structuredClone === 'function'
-        ? window.structuredClone(v)
-        : JSON.parse(JSON.stringify(v));
+    const deepCopy = typeof window.structuredClone === 'function'
+        ? v => window.structuredClone(v)
+        : v => JSON.parse(JSON.stringify(v));
 
     const loadImage = (src,onOver)=>{
         const el = new Image();
