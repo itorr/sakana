@@ -111,12 +111,7 @@ const Sakana = (_=>{
         const canvas = boxEl.querySelector('canvas');
         
         
-
-        
-
-        
-
-        boxEl.style.transform = `translateY(${translateY}) scale(${scale})`;
+        boxEl.style.transform = `translateY(${translateY||0}) scale(${scale})`;
         
         let running = false;
         
