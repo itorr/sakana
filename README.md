@@ -10,6 +10,8 @@
 
 > さかなー－－－！！
 
+[约会版](https://lab.magiconch.com/sakana/deto.html)
+
 ## 插画来源
 大伏アオ
 [@blue00f4](https://twitter.com/blue00f4)
@@ -50,6 +52,48 @@
  - [两倍慢速无阻尼千束例](https://lab.magiconch.com/sakana/?inertia=0.01&decay=1&v=chisato&scale=2&translateY=140px)
  - [超小没劲强阻尼泷奈例](https://lab.magiconch.com/sakana/?inertia=0.02&decay=0.9&scale=0.3)
  - [默认六十度一百高泷奈例](https://lab.magiconch.com/sakana/?v=takina&r=60&y=100)
+
+## 启动方式
+```html
+<script src="https://cdn.jsdelivr.net/gh/itorr/sakana@master/sakana.js"></script>
+<script>
+// 设定静音
+Sakana.setMute(true);
+
+// 获取静音状态
+const { isMute } = Sakana.Voices;
+
+// 启动
+const sakana = Sakana.init({
+  el:         '.sakana-box',     // 启动元素 node 或 选择器
+  character:  'takina',          // 启动角色 'chisato','takina' 
+  inertia:    0.01,              // 惯性
+  decay:      0.99,              // 衰减
+  r:          60,                // 启动角度
+  y:          10,                // 启动高度
+  scale:      1,                 // 缩放倍数
+  translateY: 0,                 // 位移高度
+  onSwitchCharacter(character){ // 切换角色回调
+    console.log(`${character} dayo~`);
+  },
+});
+
+// 设定归零角度
+sakana.setOriginRotate(10);
+
+// 获取角色运行状态
+const v = sakana.getValue();
+
+// 确保运行
+sakana.confirmRunning();
+
+// 切换角色
+sakana.switchCharacter();
+
+// 切换特定角色
+sakana.setCharacter('chisato');
+</script>
+```
 
 ## 本地调试
 `document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)
