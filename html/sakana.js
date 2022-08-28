@@ -89,7 +89,7 @@ const Sakana = (_=>{
 
         let {
             el, // 启动元素
-            character, // 角色
+            character = 'takina', // 角色
             inertia, // 惯性
             originRotate = 0, // 水平度数
             r, // 初始角度
