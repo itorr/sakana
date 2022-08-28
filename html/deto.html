@@ -33,7 +33,6 @@
     </footer>
     <script src="sakana.min.js"></script>
     <script>
-
         const params = new Proxy(new URLSearchParams(window.location.search), {
             get: (searchParams, prop) => searchParams.get(prop),
             set: (searchParams, prop, value) => {
@@ -43,9 +42,7 @@
             }
         });
 
-
         const htmlEl = document.documentElement;
-
 
         // 透明背景
         if(params.alpha){
@@ -58,25 +55,23 @@
             htmlEl.style.background = params.background;
         }
 
-
+        // 取消静音
         Sakana.setMute(false);
 
+        // 启动一只泷奈
         const takina = Sakana.init({
             el: '.takina',
             character:'takina',
             inertia: 0.001,
-            decay: 1,
-            onSwitchCharacter(character){
-                params.v = character;
-            }
+            decay: 1
         });
 
+        // 再启动一只千束
         const chisato = Sakana.init({
             el:'.chisato',
             character: 'chisato',
             inertia: 0.01,
             decay: 1,
-
         });
     </script>
     <script src="locale.js"></script>
