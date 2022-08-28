@@ -404,6 +404,7 @@ const Sakana = (_=>{
         };
 
         if(canSwitchCharacter){
+            boxEl.setAttribute('data-can-switch-character',canSwitchCharacter);
             bedEl.addEventListener('click',e=>{
                 e.preventDefault();
                 switchCharacter();

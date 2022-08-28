@@ -10,13 +10,7 @@
     <link rel="prefetch" href="chisato.png">
 </head>
 <body>
-    <div class="app">
-        <div class="single-box">
-            <canvas></canvas>
-            <div class="main"></div>
-            <div class="bed"></div>
-        </div>
-    </div>
+    <div class="single-box"></div>
     <div class="ctrl-box">
         <a class="set-orientation-link" onclick="setOrientationListener()" data-locale="gyroscope">陀螺仪</a>
         <a class="set-voice" onclick="toggleVoiceMute()" data-locale="mute">静音</a>
@@ -37,6 +31,10 @@
         </a>
     </footer>
     <!-- <pre id="out"></pre> -->
+
+    <link rel="stylesheet" href="sakana.css">
+    <script src="sakana.js"></script>
+
     <script src="document.js"></script>
     <script src="locale.js"></script>
 </body>

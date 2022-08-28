@@ -31,7 +31,7 @@
             卜卜口
         </a>
     </footer>
-    <!-- <pre id="out"></pre> -->
+    <link rel="stylesheet" href="sakana.css">
     <script src="sakana.js"></script>
     <script>
 
@@ -46,18 +46,6 @@
 
 
         const htmlEl = document.documentElement;
-
-        let device = String(navigator.userAgent.match(/steam|macos/i)).toLowerCase();
-
-        if(
-            /iPhone|iPad|iPod/i.test(navigator.userAgent) 
-            || 
-            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
-        ) device = 'ios';
-
-        htmlEl.setAttribute('data-device',device);
-
-
 
 
         // 透明背景

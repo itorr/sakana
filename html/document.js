@@ -44,8 +44,7 @@ if(params.background){
 const scale = +params.scale || 'auto';
 htmlEl.setAttribute('data-scale', scale);
 
-const boxEl = document.querySelector('.takina');
-
+const boxEl = document.body.children[0];
 
 const resize = _=>{
     const { offsetWidth, offsetHeight } = htmlEl;
@@ -55,7 +54,7 @@ const resize = _=>{
 
     htmlEl.setAttribute('data-is-super-vertical',isSuperVertical);
 
-    // boxEl.style.margin = `0 ${Math.ceil((offsetWidth - 500)/2)}px`;
+    boxEl.style.margin = `0 ${Math.ceil((offsetWidth - 500)/2)}px`;
 };
 
 resize();

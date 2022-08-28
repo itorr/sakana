@@ -36,7 +36,6 @@
         }
     }
     .sakana-bed{
-        pointer-events: auto;
         width: 160px;
         height: 20px;
         position: absolute;
@@ -49,5 +48,11 @@
         cursor: pointer;
         background-image: url(blue00f4.png);
         background-size: 20px 20px;
+    }
+
+    &[data-can-switch-character="true"]{
+        .sakana-bed{
+            pointer-events: auto;
+        }
     }
 }
