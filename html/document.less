@@ -45,80 +45,6 @@ a{
     text-decoration: none;
     cursor: pointer;
 }
-.app{
-    display: block;
-    height:100%;
-}
-.single-box{
-    margin:140px auto 0;
-    // width: 200px;
-    height: 500px;
-    position: relative;
-
-    position: absolute;
-    bottom:0;
-    left:0;
-    right:0;
-    pointer-events: none;
-    
-    transform-origin: 50% 100%;
-
-    canvas{
-        position: absolute;
-        // top:0;
-        left:0;
-        right:0;
-        bottom:0;
-        margin:0 auto;
-        // width: 100vw;
-        pointer-events: none;
-    }
-    .main{
-        // width: 140px;
-        // height: 200px;
-        // opacity: 0.5;
-
-        --main-width: 300px;
-        --main-height: 300px;
-        width: var(--main-width);
-        height: var(--main-height);
-
-        position: absolute;
-        left: 0;
-        right:0;
-        margin:0 auto;
-        // top: calc( 240px - var(--main-height) );
-        bottom: 260px;
-        // box-shadow:0 0 0 2px red;
-
-        cursor: pointer;
-        pointer-events: auto;
-        transform-origin: 50% 400px;
-        background: no-repeat 50% 50%;
-        background-size:cover;
-        background-image: url(takina.png);
-        // background-image: url(FYlpb3dacAAhuxs.jpg);
-        &.chisato{
-            background-image: url(chisato.png);
-        }
-    }
-    .bed{
-        pointer-events: auto;
-        width: 160px;
-        height: 20px;
-        position: absolute;
-        left: 0;
-        right: 0;
-        margin: 0 auto;
-        bottom: 0;
-        // box-shadow:0 0 0 2px green;
-        background: rgba(255,255,255,.5) no-repeat 50% 50%;
-        border-radius: 2px;
-        cursor: pointer;
-        background-image: url(blue00f4.png);
-        background-size: 20px 20px;
-    }
-}
 
 
 .ctrl-box{
@@ -131,7 +57,8 @@ a{
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    a{
+    a,
+    span{
         float: left;
         padding:0 4px;
         margin-top:2px;
@@ -139,6 +66,9 @@ a{
         &[data-active="true"]{
             background: #182562;
         }
+    }
+    span{
+        opacity: 0.5;
     }
 }
 
@@ -201,24 +131,38 @@ html[data-permission-state="true"]{
     }
 }
 
+
+html .center-bottom{
+    position: absolute;
+    bottom:0;
+    left:0;
+    right:0;
+    text-align: center;
+    &>div{
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 -60px;
+    }
+}
+
 html[data-scale="auto"]{
     @media (max-height:600px) {
-        .single-box{
+        .sakana-box{
             transform: scale(.8);
         }
     }
     @media (max-height:550px) {
-        .single-box{
+        .sakana-box{
             transform: scale(.7);
         }
     }
     @media (max-height:450px) {
-        .single-box{
+        .sakana-box{
             transform: scale(.6);
         }
     }
     @media (max-height:350px) {
-        .single-box{
+        .sakana-box{
             transform: scale(.5);
         }
     }
