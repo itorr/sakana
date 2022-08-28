@@ -53,11 +53,22 @@
  - [超小没劲强阻尼泷奈例](https://lab.magiconch.com/sakana/?inertia=0.02&decay=0.9&scale=0.3)
  - [默认六十度一百高泷奈例](https://lab.magiconch.com/sakana/?v=takina&r=60&y=100)
 
-## 启动方式
+
+## 引入个人网站
 ```html
 <div class="sakana-box"></div>
 <script src="https://cdn.jsdelivr.net/gh/itorr/sakana@master/html/sakana.min.js"></script>
 <script>
+const sakana = Sakana.init({
+  el:         '.sakana-box',     // 启动元素 node 或 选择器
+  character:  'takina',          // 启动角色 'chisato','takina' 
+  canSwitchCharacter: true,      // 允许换角色
+});
+</script>
+```
+
+### 选项与方法 
+```javascript
 // 设定静音
 Sakana.setMute(true);
 
@@ -74,7 +85,8 @@ const sakana = Sakana.init({
   y:          10,                // 启动高度
   scale:      1,                 // 缩放倍数
   translateY: 0,                 // 位移高度
-  onSwitchCharacter(character){ // 切换角色回调
+  canSwitchCharacter: true,      // 允许换角色
+  onSwitchCharacter(character){  // 切换角色回调
     console.log(`${character} dayo~`);
   },
 });
@@ -91,9 +103,14 @@ sakana.confirmRunning();
 // 切换角色
 sakana.switchCharacter();
 
+// 暂停动作
+sakana.pause();
+
+// 恢复动作
+sakana.play();
+
 // 切换特定角色
 sakana.setCharacter('chisato');
-</script>
 ```
 
 ## 本地调试
