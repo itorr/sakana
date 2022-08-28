@@ -450,18 +450,20 @@ const Sakana = (_=>{
         }
     };
 
-
+    const baseURL = 'https://lab.magiconch.com/sakana/';
+    const twitterURL = 'https://twitter.com/blue00f4/';
+    const githubRepositoryURL = 'https://github.com/itorr/sakana';
     log(
-        '%c錦木千束 https://lab.magiconch.com/sakana/?v=chisato',
+        `%c錦木千束 ${baseURL}?v=chisato`,
         chisatoConsoleStyle,
     );
     log(
-        '%c井ノ上たきな https://lab.magiconch.com/sakana/?v=takina',
+        `%c井ノ上たきな ${baseURL}?v=takina`,
         takinaConsoleStyle,
     );
     
     log(
-        '%c永续超慢速%chttps://lab.magiconch.com/sakana/?inertia=0.001&decay=1',
+        `%c永续超慢速%c${baseURL}?inertia=0.001&decay=1`,
         chisatoConsoleStyle,
         takinaConsoleStyle,
     );
@@ -471,8 +473,8 @@ const Sakana = (_=>{
         'font-weight:bold',
         'color:#C34',
     
-        'https://twitter.com/blue00f4/status/1551887529615687680',
-        'https://twitter.com/blue00f4/status/1552066743853813760',
+        twitterURL+'status/1551887529615687680',
+        twitterURL+'status/1552066743853813760',
     );
     
     log(
@@ -481,11 +483,11 @@ const Sakana = (_=>{
     );
     log(
         'Github',
-        'https://github.com/itorr/sakana',
+        githubRepositoryURL,
     );
     log(
         '问题反馈',
-        'https://github.com/itorr/sakana/issues',
+        `${githubRepositoryURL}/issues`,
     );
     
 
