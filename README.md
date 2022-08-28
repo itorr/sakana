@@ -130,6 +130,10 @@ html .sakana-box{
 ## 本地调试
 `document.less` 需要编译成 `.css` 样式文件 [#6](https://github.com/itorr/sakana/pull/6)
 
+## 编译
+ - `npm i`
+ - `npm run build`
+
 ## GitHub
 https://github.com/itorr/sakana/
 
