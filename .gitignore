@@ -6,3 +6,4 @@ what2.md
 # > lessc html/document.less > html/document.css
 html/document.css
 html/sakana.css
+package-lock.json

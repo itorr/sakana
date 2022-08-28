@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "clean-css": "^5.3.1",
+    "uglify-es": "^3.3.9",
+    "uglify-js": "^3.17.0"
+  }
+}
