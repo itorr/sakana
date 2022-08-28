@@ -25,7 +25,8 @@ if(
 
 htmlEl.setAttribute('data-device',device);
 
-
+// 尝试修复部分手机浏览器高度异常的问题
+document.body.style.minHeight = `${window.innerHeight}px`;
 
 
 // 透明背景
