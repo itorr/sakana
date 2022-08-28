@@ -85,7 +85,7 @@ const sakana = Sakana.init({
   y:          10,                // 启动高度
   scale:      1,                 // 缩放倍数
   translateY: 0,                 // 位移高度
-  canSwitchCharacter: true,      // 允许换角色
+  canSwitchCharacter: false,     // 允许换角色
   onSwitchCharacter(character){  // 切换角色回调
     console.log(`${character} dayo~`);
   },
