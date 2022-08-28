@@ -55,8 +55,12 @@
 
 
 ## 引入个人网站
+
 ```html
 <div class="sakana-box"></div>
+```
+
+```html
 <script src="https://cdn.jsdelivr.net/npm/sakana"></script>
 <script>
 const sakana = Sakana.init({
@@ -65,16 +69,6 @@ const sakana = Sakana.init({
   canSwitchCharacter: true,      // 允许换角色
 });
 </script>
-```
-### 放在窗口右下
-```html
-<style>
-  .sakana-box{
-    position: fixed;
-    right: 0;
-    bottom: 0;
-  }
-</style>
 ```
 
 ### 选项与方法 
@@ -121,6 +115,16 @@ sakana.play();
 
 // 切换特定角色
 sakana.setCharacter('chisato');
+```
+
+
+### 放在窗口右下
+```css
+html .sakana-box{
+  position: fixed;
+  right: 0;
+  bottom: 0;
+}
 ```
 
 ## 本地调试
