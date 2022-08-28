@@ -223,11 +223,10 @@ const Sakana = (_=>{
 
             const runUnix = +new Date();
 
-            const lastRunUnixDiff = runUnix - lastRunUnix;
             let _inertia = inertia;
 
-
-            if(lastRunUnixDiff < 40){ // 如果单帧间隔超过 40ms 那就躺平不处理
+            const lastRunUnixDiff = runUnix - lastRunUnix;
+            if(lastRunUnixDiff < 16){ // 如果单帧间隔超过 16ms 那就躺平不处理
                 _inertia = inertia / defaultFrameUnix * lastRunUnixDiff;
             }
             lastRunUnix = runUnix;
