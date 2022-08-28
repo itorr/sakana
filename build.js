@@ -50,7 +50,7 @@ const fileNames = [
   'chisato.png',
   'blue00f4.png',
   'sakana.m4a',
-  'chinanage.m4a',
+  'chinanago.m4a',
 ];
 const Types = {
   png: 'image/png',
