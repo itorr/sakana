@@ -24,13 +24,13 @@ const LOCALE_SRC = {
   "ja-JP": {
     lang: "言語",
     gyroscope: "水準器",
-    mute: "靜音",
+    mute: "静音",
     magic: "自動",
     weibo: "微博",
     image: "絵",
-    program: "網頁",
+    program: "開発",
     date: "デート",
-    home: "標準"
+    home: "ホーム",
   },
 };
 const AVAIL_LANGS = Object.keys(LOCALE_SRC).sort();
@@ -39,8 +39,8 @@ const locale = {
   get: () => {
     let lang = "zh-CN";
     let paramLang = new URLSearchParams(location.search).get("lang");
-    if(paramLang){
-      paramLang = paramLang.replace('_','-');
+    if (paramLang) {
+      paramLang = paramLang.replace("_", "-");
     }
     if (AVAIL_LANGS.includes(paramLang)) {
       lang = paramLang;
