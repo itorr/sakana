@@ -57,7 +57,7 @@
 ## 引入个人网站
 ```html
 <div class="sakana-box"></div>
-<script src="https://cdn.jsdelivr.net/gh/itorr/sakana@master/html/sakana.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sakana"></script>
 <script>
 const sakana = Sakana.init({
   el:         '.sakana-box',     // 启动元素 node 或 选择器

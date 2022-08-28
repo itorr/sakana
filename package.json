@@ -3,5 +3,30 @@
     "clean-css": "^5.3.1",
     "uglify-es": "^3.3.9",
     "uglify-js": "^3.17.0"
-  }
+  },
+  "name": "sakana",
+  "description": "🐟「Sakana!」石蒜虚拟器",
+  "version": "1.0.0",
+  "main": "html/sakana.min.js",
+  "devDependencies": {},
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/itorr/sakana.git"
+  },
+  "keywords": [
+    "recoil",
+    "lycoris",
+    "sakana",
+    "lycoris-recoil",
+    "sayuri"
+  ],
+  "author": "itorr <https://github.com/itorr>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/itorr/sakana/issues"
+  },
+  "homepage": "https://github.com/itorr/sakana#readme"
 }
