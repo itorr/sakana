@@ -10,7 +10,7 @@
 
 > さかなー－－－！！
 
-[约会版](https://lab.magiconch.com/sakana/deto.html)
+支持引入多个模拟器了！[约会版](https://lab.magiconch.com/sakana/deto.html)
 
 ## 插画来源
 大伏アオ
