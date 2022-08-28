@@ -71,7 +71,7 @@ const Sakana = (_=>{
         };
     };
 
-    const init = options=>{
+    const init = (options = {})=>{
         const {
             decay, // 衰减
             onSwitchCharacter = _=>{}, // 切换角色回调
@@ -88,7 +88,6 @@ const Sakana = (_=>{
             originRotate = 0, // 水平度数
             r, // 初始角度
             y, // 初始高度
-            
         } = options;
 
         // 兼容字符选择器
@@ -374,6 +373,9 @@ const Sakana = (_=>{
 
             // 自定义衰减
             if(decay) v.d = decay;
+
+            if(r) v.r = r;
+            if(r) v.y = y;
 
             confirmRunning();
         };
