@@ -47,7 +47,7 @@
  - 添加 `?y=100` 请求参数，初始角色下沉 100 单位
 
 #### 组合参数例
- - [超高速微阻尼千束英文例](https://lab.magiconch.com/sakana/?inertia=0.7&decay=0.999&v=chisato&lang=en-US)
+ - [超高速微阻尼千束英文例](https://lab.magiconch.com/sakana/?inertia=0.3&decay=0.999&v=chisato&lang=en-US)
  - [超慢速无阻尼泷奈日文例](https://lab.magiconch.com/sakana/?inertia=0.001&decay=1&v=takina&lang=ja-JP)
  - [两倍慢速无阻尼千束例](https://lab.magiconch.com/sakana/?inertia=0.01&decay=1&v=chisato&scale=2&translateY=140px)
  - [超小没劲强阻尼泷奈例](https://lab.magiconch.com/sakana/?inertia=0.02&decay=0.9&scale=0.3)
