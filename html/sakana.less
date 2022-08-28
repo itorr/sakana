@@ -1,0 +1,53 @@
+.sakana-box{
+    width: 500px;
+    height: 800px;
+    position: relative;
+    
+    transform-origin: 50% 100%;
+    pointer-events: none;
+
+    canvas{
+        position: absolute;
+        left:0;
+        right:0;
+        bottom:0;
+        pointer-events: none;
+    }
+    .sakana-character{
+        width: 300px;
+        height: 300px;
+
+        position: absolute;
+        left: 0;
+        right:0;
+        margin:0 auto;
+        bottom: 260px;
+
+        cursor: pointer;
+        pointer-events: auto;
+        transform-origin: 50% 400px;
+        background: no-repeat 50% 50%;
+        background-size:cover;
+        &[data-character="chisato"]{
+            background-image: url(chisato.png);
+        }
+        &[data-character="takina"]{
+            background-image: url(takina.png);
+        }
+    }
+    .sakana-bed{
+        pointer-events: auto;
+        width: 160px;
+        height: 20px;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        bottom: 0;
+        background: rgba(255,255,255,.5) no-repeat 50% 50%;
+        border-radius: 2px;
+        cursor: pointer;
+        background-image: url(blue00f4.png);
+        background-size: 20px 20px;
+    }
+}
