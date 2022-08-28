@@ -1,15 +1,7 @@
 const Sakana = (_=>{
-        
-    // const { children } = document.body;
-    // const scriptEl = children[children.length - 1];
-    // const scriptSrc = scriptEl.src;
-    // const basePath = scriptSrc.replace(/\/[a-z\.]+$/,'/');
-
-    // const linkEl = document.createElement('link');
-    // linkEl.rel='stylesheet';
-    // linkEl.href = basePath + 'sakana.css';
-    // document.head.appendChild(linkEl);
-
+    /* css */
+    
+    const { log } = console;
     
     // 粘性
     const sticky = 0.1;
@@ -347,7 +339,7 @@ const Sakana = (_=>{
                 if(!e.touches[0]) return;
 
                 const rect = boxEl.getBoundingClientRect();
-                // console.log(rect);
+                // log(rect);
                 const leftCenter = rect.left + rect.width / 2;
                 const topCenter = rect.top;
 
@@ -413,7 +405,7 @@ const Sakana = (_=>{
 
         const playVoice = _ => {
             if (Voices.isMute) return;
-            // console.log({ r: v.r, y: v.y })
+            // log({ r: v.r, y: v.y })
         
             if (character === 'chisato') {
                 if (
@@ -421,7 +413,7 @@ const Sakana = (_=>{
                     Math.abs(v.r) <= 4
                     && Math.abs(v.y) >= 20
                 ) {
-                    console.log('%cchin~a~na~go~',chisatoConsoleStyle);
+                    log('%cchin~a~na~go~',chisatoConsoleStyle);
                     Voices.chisato.play();
                 };
             } else {
@@ -430,7 +422,7 @@ const Sakana = (_=>{
                     v.r >= Characters.takina.r
                     && (Math.abs(v.y) <= 12 || v.r >= 3 * Math.abs(v.y))
                 ) {
-                    console.log('%csakana~',takinaConsoleStyle);
+                    log('%csakana~',takinaConsoleStyle);
                     Voices.takina.play();
                 };
             };
@@ -459,22 +451,22 @@ const Sakana = (_=>{
     };
 
 
-    console.log(
+    log(
         '%c錦木千束 https://lab.magiconch.com/sakana/?v=chisato',
         chisatoConsoleStyle,
     );
-    console.log(
+    log(
         '%c井ノ上たきな https://lab.magiconch.com/sakana/?v=takina',
         takinaConsoleStyle,
     );
     
-    console.log(
+    log(
         '%c永续超慢速%chttps://lab.magiconch.com/sakana/?inertia=0.001&decay=1',
         chisatoConsoleStyle,
         takinaConsoleStyle,
     );
     
-    console.log(
+    log(
         '绘: %c大伏アオ %c已取得在网页中使用的非商用授权',
         'font-weight:bold',
         'color:#C34',
@@ -483,15 +475,15 @@ const Sakana = (_=>{
         'https://twitter.com/blue00f4/status/1552066743853813760',
     );
     
-    console.log(
+    log(
         '微博',
         'https://weibo.com/1197780522/M2xbREtGI',
     );
-    console.log(
+    log(
         'Github',
         'https://github.com/itorr/sakana',
     );
-    console.log(
+    log(
         '问题反馈',
         'https://github.com/itorr/sakana/issues',
     );
