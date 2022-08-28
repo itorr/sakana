@@ -59,7 +59,8 @@
 
 ## 引入到个人网站
 
-引入到个人网站 [示例](https://lab.magiconch.com/sakana/into.html) [源码](https://github.com/itorr/sakana/blob/main/html/into.html)
+[示例](https://lab.magiconch.com/sakana/into.html)
+[源码](https://github.com/itorr/sakana/blob/main/html/into.html)
 
 ```html
 <div class="sakana-box"></div>
@@ -68,9 +69,9 @@
 ```html
 <script src="https://cdn.jsdelivr.net/npm/sakana"></script>
 <script>
-const sakana = Sakana.init({
+Sakana.init({
   el:         '.sakana-box',     // 启动元素 node 或 选择器
-  character:  'takina',          // 启动角色 'chisato','takina' 
+  scale:      .5,                // 缩放倍数
   canSwitchCharacter: true,      // 允许换角色
 });
 </script>
@@ -86,6 +87,7 @@ const { isMute } = Sakana.Voices;
 
 // 启动
 const sakana = Sakana.init({
+  // 选项: 默认值
   el:         '.sakana-box',     // 启动元素 node 或 选择器
   character:  'takina',          // 启动角色 'chisato','takina' 
   inertia:    0.01,              // 惯性
@@ -129,6 +131,7 @@ html .sakana-box{
   position: fixed;
   right: 0;
   bottom: 0;
+  transform-origin: 100% 100%; /* 从右下开始变换 */
 }
 ```
 
