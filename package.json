@@ -6,7 +6,7 @@
   },
   "name": "sakana",
   "description": "🐟「Sakana!」石蒜虚拟器",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "html/sakana.min.js",
   "devDependencies": {},
   "scripts": {
@@ -16,6 +16,9 @@
     "type": "git",
     "url": "git+https://github.com/itorr/sakana.git"
   },
+  "files": [
+    "html/sakana.min.js"
+  ],
   "keywords": [
     "recoil",
     "lycoris",
@@ -28,5 +31,5 @@
   "bugs": {
     "url": "https://github.com/itorr/sakana/issues"
   },
-  "homepage": "https://github.com/itorr/sakana#readme"
+  "homepage": "https://lab.magiconch.com/sakana/"
 }
