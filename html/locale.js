@@ -8,6 +8,7 @@ const LOCALE_SRC = {
     image: "绘",
     program: "程序",
     date: "约会",
+    home: "首页",
   },
   "en-US": {
     lang: "Language",
@@ -18,6 +19,7 @@ const LOCALE_SRC = {
     image: "Image",
     program: "Program",
     date: "Date",
+    home: "Home",
   },
   "ja-JP": {
     lang: "言語",
@@ -28,6 +30,7 @@ const LOCALE_SRC = {
     image: "絵",
     program: "網頁",
     date: "デート",
+    home: "標準"
   },
 };
 const AVAIL_LANGS = Object.keys(LOCALE_SRC).sort();
