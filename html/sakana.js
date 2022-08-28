@@ -102,6 +102,7 @@ const Sakana = (_=>{
         if(!el) throw new Error('invalid Element');
 
         if(!inertia) inertia = 0.08;
+        inertia = Math.min(0.5, Math.max(0.08, inertia))
 
         const setOriginRotate = or=>originRotate = or;
 
