@@ -55,7 +55,7 @@
 
 ## 启动方式
 ```html
-<script src="https://cdn.jsdelivr.net/gh/itorr/sakana@master/sakana.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/itorr/sakana@master/sakana.min.js"></script>
 <script>
 // 设定静音
 Sakana.setMute(true);
