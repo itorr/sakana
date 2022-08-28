@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>デート - Sakana! - 石蒜虚拟器 - 石蒜模拟器 - 神奇海螺试验场</title>
+    <meta name="description" content="Lycoris Recoil,リコリス・リコイル,莉可丽丝,石蒜虚拟器,石蒜模拟器,锦木千束,錦木千束,井之上泷奈,井ノ上たきな,神奇海螺试验场">
+    <link rel="stylesheet" href="document.css">
+    <link rel="apple-touch-icon" href="takina.png">
+</head>
+<body>
+    <div class="center-bottom">
+        <div class="takina"></div>
+        <div class="chisato"></div>
+    </div>
+    <div class="ctrl-box">
+        <a class="set-orientation-link" onclick="setOrientationListener()" data-locale="gyroscope">陀螺仪</a>
+        <span data-locale="date">约会</span>
+        <a class="locale-switch" onclick="switchLocale()" data-locale="lang">语言</a>
+    </div>
+    <footer>
+        <a href="/" target="_blank">lab</a>
+        <a href="https://weibo.com/1197780522/M2xbREtGI" target="_blank" data-locale="weibo">微博</a>
+        <a href="https://github.com/itorr/sakana" target="_blank">GitHub</a>
+        <a href="https://twitter.com/blue00f4/status/1551887529615687680" target="_blank">
+            <span data-locale="image">绘</span>
+            大伏アオ
+        </a>
+        <a href="https://weibo.com/reiove" target="_blank">
+            <span data-locale="program">程序</span>
+            卜卜口
+        </a>
+    </footer>
+    <!-- <pre id="out"></pre> -->
+    <script src="sakana.js"></script>
+    <script>
+
+        const params = new Proxy(new URLSearchParams(window.location.search), {
+            get: (searchParams, prop) => searchParams.get(prop),
+            set: (searchParams, prop, value) => {
+                searchParams.set(prop, value);
+                window.history.replaceState(null, null, `?${searchParams.toString()}`);
+                return true;
+            }
+        });
+
+
+        const htmlEl = document.documentElement;
+
+        let device = String(navigator.userAgent.match(/steam|macos/i)).toLowerCase();
+
+        if(
+            /iPhone|iPad|iPod/i.test(navigator.userAgent) 
+            || 
+            (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1)
+        ) device = 'ios';
+
+        htmlEl.setAttribute('data-device',device);
+
+
+
+
+        // 透明背景
+        if(params.alpha){
+            htmlEl.setAttribute('data-alpha',params.alpha);
+        }
+
+        // 自定义背景色
+        if(params.background){
+            htmlEl.setAttribute('data-alpha',true);
+            htmlEl.style.background = params.background;
+        }
+
+
+        Sakana.setMute(false);
+
+        const takina = Sakana.init({
+            el: '.takina',
+            character:'takina',
+            inertia: 0.001,
+            decay: 1,
+            onSwitchCharacter(character){
+                params.v = character;
+            }
+        });
+
+        const chisato = Sakana.init({
+            el:'.chisato',
+            character: 'chisato',
+            inertia: 0.01,
+            decay: 1,
+
+        });
+    </script>
+    <script src="locale.js"></script>
+</body>
+</html>
