@@ -25,8 +25,7 @@ if(
 
 htmlEl.setAttribute('data-device',device);
 
-// 尝试修复部分手机浏览器高度异常的问题
-document.body.style.minHeight = `${window.innerHeight}px`;
+
 
 
 // 透明背景
@@ -54,6 +53,9 @@ const resize = _=>{
     const isSuperVertical = scalc < 0.5757;
 
     htmlEl.setAttribute('data-is-super-vertical',isSuperVertical);
+
+    // 尝试修复部分手机浏览器高度异常的问题
+    document.body.style.minHeight = `${window.innerHeight}px`;
 
     boxEl.style.margin = `0 ${Math.ceil((offsetWidth - 500)/2)}px`;
 };
