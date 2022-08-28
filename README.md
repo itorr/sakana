@@ -6,6 +6,9 @@
 
 # 🐟「Sakana!」石蒜模拟器
 
+[![NPM](https://img.shields.io/npm/v/sakana)](https://www.npmjs.com/package/sakana)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 地址 https://lab.magiconch.com/sakana/
 
 > さかなー－－－！！
@@ -143,5 +146,14 @@ https://github.com/itorr/sakana/
  - 网页小组件版本 [Demo](https://sakana.dsrkafuu.net/) [@dsrkafuu/sakana-widget](https://github.com/dsrkafuu/sakana-widget) 
  - 壁纸引擎 @而我撑伞 [BV1vN4y1F7ML](https://www.bilibili.com/video/BV1vN4y1F7ML) [创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2854221525)
  - 壁纸引擎 @麻匪 [BV1jG4y1k7oA](https://www.bilibili.com/video/bv1jG4y1k7oA) [创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2854192204)
+
+
 ## 微博
 https://weibo.com/1197780522/M2xbREtGI
+
+
+## License
+
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2022, itorr
