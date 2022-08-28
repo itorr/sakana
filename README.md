@@ -59,7 +59,7 @@
 
 ## 引入到个人网站
 
-引入到个人网站示例 [./into.html](https://lab.magiconch.com/sakana/into.html) [源码](https://github.com/itorr/sakana/blob/main/html/into.html)
+引入到个人网站 [示例](https://lab.magiconch.com/sakana/into.html) [源码](https://github.com/itorr/sakana/blob/main/html/into.html)
 
 ```html
 <div class="sakana-box"></div>
