@@ -9,15 +9,11 @@ const {
 const toMD5 = data=>require('crypto').createHash('md5').update(data).digest('hex');
 
 const UglifyOptions = {
-  // 解析配置
   parse: {},
-  // 压缩配置
   compress: {
     drop_console: false,
   },
-  // 混淆配置
   mangle: {},
-  // 输出配置
   output: {
     comments: false,    // 移除注释
   },
@@ -74,9 +70,7 @@ const fileNamesRegExp = new RegExp('('+fileNames.join('|')+')');
 const sakanaJSCodeMinify = UglifyJS.minify(sakanaJSCode, UglifyOptions);
 const sakanaJSCodeMinifyCode = sakanaJSCodeMinify.code;
 
-const sakanaJSCodeMinifyCodeReplaced = sakanaJSCodeMinifyCode.replace(fileNamesRegExpG,text=>{
-  const match = text.match(fileNamesRegExp);
-  const fileName = match[1];
+const sakanaJSCodeMinifyCodeReplaced = sakanaJSCodeMinifyCode.replace(fileNamesRegExpG,fileName=>{
   const data = readFileSync('html/'+fileName,'binary');
   const buffer = Buffer.from(data, 'binary');
   return 'data:'+ getImageType(fileName) +';base64,'+ buffer.toString('base64') +'';
