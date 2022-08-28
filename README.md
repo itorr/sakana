@@ -66,6 +66,16 @@ const sakana = Sakana.init({
 });
 </script>
 ```
+### 放在窗口右下
+```html
+<style>
+  .sakana-box{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+  }
+</style>
+```
 
 ### 选项与方法 
 ```javascript
