@@ -14,7 +14,7 @@
 > さかなー－－－！！
 
 日本語リードミー 
-[docs/ja/README.md](https://github.com/OHMORIYUSUKE/sakana) 
+[docs/ja/README.md](docs/ja/README.md) 
 [#53](https://github.com/itorr/sakana/pull/53)
 [@OHMORIYUSUKE](https://github.com/OHMORIYUSUKE)
 
