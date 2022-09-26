@@ -13,6 +13,11 @@
 
 > さかなー－－－！！
 
+日本語リードミー 
+[docs/ja/README.md](https://github.com/OHMORIYUSUKE/sakana) 
+[#53](https://github.com/itorr/sakana/pull/53)
+[@OHMORIYUSUKE](https://github.com/OHMORIYUSUKE)
+
 支持引入多个模拟器了！ [约会版](https://lab.magiconch.com/sakana/deto.html)
 
 ## 插画来源
