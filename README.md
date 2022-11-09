@@ -82,12 +82,11 @@ Sakana.init({
 </script>
 ```
 
-## NPM
-### 安装
+### NPM 安装与引入
 ```bash
 npm i sakana -d
 ```
-### 引入
+
 ```javascript
 import Sakana from 'sakana';
 
