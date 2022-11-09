@@ -156,6 +156,7 @@ https://github.com/itorr/sakana/
  - 壁纸引擎 @麻匪 [BV1jG4y1k7oA](https://www.bilibili.com/video/bv1jG4y1k7oA) [创意工坊](https://steamcommunity.com/sharedfiles/filedetails/?id=2854192204)
  - VSCode 插件 [@UFOAlastor/sakana-hop](https://github.com/UFOAlastor/sakana-hop)
  - Unity 版本 [@zxsean/sakana_Unity](https://github.com/zxsean/sakana_Unity)
+ - 只因你太美版本 [@SyMind/ji](https://github.com/SyMind/ji)
 
 ## 微博
 https://weibo.com/1197780522/M2xbREtGI
