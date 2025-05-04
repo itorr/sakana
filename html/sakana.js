@@ -449,6 +449,10 @@ const Sakana = (_=>{
             },
             getRunning(){
                 return running;
+            },
+            destroy(){
+                running = false,
+                el.innerHTML = '';
             }
         }
     };
@@ -502,10 +506,6 @@ const Sakana = (_=>{
 
             Voices.takina.muted = 
             Voices.chisato.muted = _isMute;
-        },
-        destroy(){
-            running = false,
-            el.innerHTML = '';
         }
     };
 })();
